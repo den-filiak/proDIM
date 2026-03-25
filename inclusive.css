@@ -1,0 +1,204 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#0F1115;
+  font-family:'Manrope',sans-serif;
+  padding:48px 128px;
+  color:#fff;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo { height: 72px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.6)); }
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 200;
+}
+
+.burger span { display: block; width: 32px; height: 3px; background: #fff; border-radius: 2px; }
+
+/* ── OVERLAY MENU ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.overlay-bg { position: absolute; inset: 0; background: rgba(0,0,0,.8); cursor: pointer; }
+
+nav {
+  position: absolute;
+  top: 0; right: 0;
+  width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 80px 32px 32px;
+  background: #0F1115;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+}
+
+.menu-back {
+  display: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+#nav-open:checked ~ .overlay { opacity: 1; pointer-events: all; }
+#nav-open:checked ~ .overlay nav { transform: translateX(0); }
+
+.nc {
+  flex: 1;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+  background: var(--bg) center / cover no-repeat;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.3);
+  transition: background .3s ease;
+}
+
+.nc span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform .3s ease;
+}
+
+.nc small {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  color: #A0A6AD;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+  z-index: 2;
+}
+
+.nc:hover::before { background: rgba(0,0,0,.8); }
+.nc:hover span { transform: scale(.85); }
+.nc:hover small { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* TITLE */
+h1{
+  font-size:48px;
+  margin-bottom:32px;
+  border-bottom:2px solid #fff;
+  display:inline-block;
+}
+
+/* GALLERY */
+.gallery{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+/* всі картинки */
+.gallery img{
+  width:100%;
+  display:block;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+}
+
+/* 2 в ряд */
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+
+/* ── FOOTER ── */
+footer { margin-top: 32px; }
+
+hr { width: 1140px; max-width: 100%; margin: 0 auto 32px; border: none; border-top: 1px solid #A0A6AD; }
+
+.foot { display: flex; align-items: center; justify-content: space-between; }
+.foot > img { height: 80px; }
+
+.socials { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.socials strong { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: .05em; }
+
+.icons { display: flex; gap: 20px; align-items: center; }
+.icons a { display: flex; opacity: .85; transition: opacity .2s; }
+.icons a:hover { opacity: 1; }
+
+.phone { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+.phone strong { font-size: 24px; font-weight: 700; }
+
+.phone-n {
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+}
+
+.phone-n:hover {
+  color: #A0A6AD;
+}
+
+/* 📱 MOBILE */
+@media(max-width:768px){
+
+body{
+  padding:32px;
+}
+
+h1{
+  font-size:32px;
+}
+
+  hr { width: 100%; margin-bottom: 20px; }
+  .foot { flex-wrap: wrap; }
+  .foot > img { height: 56px; order: 1; }
+  .phone { order: 2; }
+  .phone strong { font-size: 16px; }
+  .socials { order: 3; width: 100%; margin-top: 20px; }
+  .socials strong { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+  .menu-back { display: block; }
+}

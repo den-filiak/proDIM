@@ -1,0 +1,223 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0F1115;font-family:'Manrope',sans-serif;color:#A0A6AD;padding:0 128px 48px}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo { height: 72px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.6)); }
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 200;
+}
+
+.burger span { display: block; width: 32px; height: 3px; background: #fff; border-radius: 2px; }
+
+/* ── OVERLAY MENU ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.overlay-bg { position: absolute; inset: 0; background: rgba(0,0,0,.8); cursor: pointer; }
+
+nav {
+  position: absolute;
+  top: 0; right: 0;
+  width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 80px 32px 32px;
+  background: #0F1115;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+}
+
+.menu-back {
+  display: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+#nav-open:checked ~ .overlay { opacity: 1; pointer-events: all; }
+#nav-open:checked ~ .overlay nav { transform: translateX(0); }
+
+.nc {
+  flex: 1;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+  background: var(--bg) center / cover no-repeat;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.3);
+  transition: background .3s ease;
+}
+
+.nc span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform .3s ease;
+}
+
+.nc small {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  color: #A0A6AD;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+  z-index: 2;
+}
+
+.nc:hover::before { background: rgba(0,0,0,.8); }
+.nc:hover span { transform: scale(.85); }
+.nc:hover small { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* HEADING */
+h1{color:#fff;font-size:40px;font-weight:700;line-height:1.2;padding-bottom:10px;border-bottom:2px solid #fff;margin-bottom:28px;display:inline-block}
+h1 small{display:block;font-size:28px;font-weight:700;color:#fff}
+
+.single-img{
+  width:80%;
+  border:2px solid #D4A373;
+  border-radius:8px;
+  overflow: hidden;
+  margin-bottom:32px;
+}
+
+/* TABLE */
+.spec-table{width:100%;border-collapse:collapse;margin-bottom:32px;font-size:16px}
+.spec-table th{color:#fff;font-weight:700;text-align:center;padding:10px 8px;border-bottom:2px solid #fff;font-size:20px}
+.spec-table th:first-child{text-align:left}
+.spec-table td{padding:10px 8px;border-bottom:2px solid #fff;text-align:center;vertical-align:top;color:#A0A6AD}
+.spec-table td:first-child{text-align:left;color:#fff;font-size:20px;font-weight:500}
+.spec-table tr:last-child td{color:#D4A373;font-weight:700;font-size:20px;border-top:2px solid #D4A373;border-bottom:2px solid #D4A373;border-left:2px solid #D4A373;border-right:2px solid #D4A373;}
+.plus{color:#fff;font-weight:700;font-size:20px}
+.minus{color:#4a4e56;font-weight:700;font-size:20px}
+.note{font-size:16px;color:#6b7280;font-weight:500}
+
+/* EXTRA TEXT */
+.extra{font-size:17px;font-weight:500;line-height:1.7;margin-bottom:28px}
+.extra p{margin-bottom:16px}
+.extra h3{color:#fff;font-size:20px;font-weight:700;margin-bottom:12px}
+.extra ul{padding-left:20px;margin-bottom:16px}
+.extra ul li{margin-bottom:8px}
+.extra-img{width:50%;border-radius:8px;margin:28px 0;display:block}
+.notice{font-size:15px;font-weight:500;line-height:1.6;color:#A0A6AD;border-top:1px solid #2a2d33;padding-top:24px;margin-top:8px}
+.notice p{margin-bottom:10px}
+.notice strong{color:#fff}
+.thanks{color:#fff;font-size:18px;font-weight:700;text-align:right;margin-top:24px}
+
+/* ── FOOTER ── */
+footer { margin-top: 32px; }
+
+hr { width: 1140px; max-width: 100%; margin: 0 auto 32px; border: none; border-top: 1px solid #A0A6AD; }
+
+.foot { display: flex; align-items: center; justify-content: space-between; }
+.foot > img { height: 80px; }
+
+.socials { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.socials strong { color: #fff; font-size: 20px; font-weight: 700; letter-spacing: .05em; }
+
+.icons { display: flex; gap: 20px; align-items: center; }
+.icons a { display: flex; opacity: .85; transition: opacity .2s; }
+.icons a:hover { opacity: 1; }
+
+.phone { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+.phone strong { font-size: 24px; font-weight: 700; }
+
+.phone-n {
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+}
+
+.phone-n:hover {
+  color: #A0A6AD;
+}
+
+
+/* TABLET */
+@media(max-width:1024px){
+  body{padding:0 48px 40px}
+  h1{font-size:32px}
+  h1 small{font-size:20px}
+  nav{width:300px}
+  hr{width:100%}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  body{padding:0 32px 32px}
+  h1{font-size:24px}
+  h1 small{font-size:16px}
+  nav{width:100%;padding:80px 24px 32px}
+  .spec-table{font-size:16px}
+  .spec-table th,.spec-table td{padding:7px 4px;font-size: 14px;}
+  .spec-table td:first-child{font-size: 14px;}
+  .spec-table tr:last-child td{font-size: 14px;}
+  .thumbs img,.thumbs video{width:60px;height:45px}
+  hr{width:100%;margin-bottom:20px}
+  .foot{flex-wrap:wrap}
+  .foot>.logo-f{height:56px;order:1}
+  .phone{order:2}
+  .phone strong{font-size:16px}
+  .socials{order:3;width:100%;margin-top:20px}
+  .socials strong{font-size:16px}
+}
+
+@media (max-width: 768px) {
+  .menu-back {
+    display: block;
+  }
+}
+
+@media(max-width:480px){
+  body{padding:0 20px 24px}
+  h1{font-size:20px}
+  .icons{gap:14px}
+  .lb-inner img,.lb-inner video{max-width:95vw}
+}

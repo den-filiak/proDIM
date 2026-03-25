@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pro DIM — Проект</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+</head>
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    
+    <button class="arrow prev" id="lb-prev">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 6l-6 6 6 6"/>
+      </svg>
+    </button>
+
+    <div id="lightbox-media"></div>
+
+    <button class="arrow next" id="lb-next">
+      <svg viewBox="0 0 24 24">
+        <path d="M9 6l6 6-6 6"/>
+      </svg>
+    </button>
+
+    <button class="lightbox-close" id="lb-close">✕</button>
+
+  </div>
+</div>
+
+<body>
+
+  <input type="checkbox" id="nav-open" hidden>
+
+  <header>
+    <a href="index.html"><img src="logo.png" alt="pro DIM" class="logo"></a>
+    <label for="nav-open" class="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </label>
+  </header>
+
+  <div class="overlay">
+    <label for="nav-open" class="overlay-bg"></label>
+    <nav>
+      <label for="nav-open" class="menu-back">
+        Назад
+      </label>
+      <a href="contact.html" class="nc" style="--bg:url('img/contact.png')">
+        <span>КОНТАКТИ</span>
+        <small>∧<br>Дізнатись більше</small>
+      </a>
+      <a href="about.html" class="nc" style="--bg:url('img/about.png')">
+        <span>ПРО НАС</span>
+        <small>∧<br>Дізнатись більше</small>
+      </a>
+      <a href="projects.html" class="nc" style="--bg:url('img/projects.png')">
+        <span>РЕАЛІЗОВАНІ<br>ПРОЕКТИ</span>
+        <small>∧<br>Дізнатись більше</small>
+      </a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="content">
+      <div class="text-col">
+        <h1 id="proj-title"></h1>
+        <p id="proj-subtitle" class="subtitle"></p>
+        <div id="proj-text"></div>
+      </div>
+      <div class="gallery-col">
+        <div class="gallery-main">
+          <button class="arrow prev" id="prev" aria-label="Попереднє">
+  <svg viewBox="0 0 24 24">
+    <path d="M15 6l-6 6 6 6"/>
+  </svg>
+</button>
+          <div id="main-media"></div>
+          <button class="arrow next" id="next" aria-label="Наступне">
+  <svg viewBox="0 0 24 24">
+    <path d="M9 6l6 6-6 6"/>
+  </svg>
+</button>
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <div class="foot">
+      <img src="logo.png" alt="pro DIM">
+      <div class="socials">
+        <strong>БУДЬ З НАМИ НА ЗВ'ЯЗКУ!</strong>
+        <div class="icons">
+          <a href="https://www.tiktok.com/@prodim_?_r=1&_t=ZS-94xQqrTevDO" aria-label="TikTok"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
+          <a href="https://www.facebook.com/share/18eHg71dXW/" aria-label="Facebook"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="viber://chat?number=%2B380684421138" aria-label="Viber"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M11.4 2C6.27 2 2.5 5.28 2.5 9.64c0 2.44 1.15 4.64 3.04 6.09v3.27l2.97-1.63c.58.16 1.2.24 1.84.24h.05c5.13 0 8.9-3.28 8.9-7.64S16.53 2 11.4 2zm1 10.48l-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.91-2.72-5.47 5.82z"/></svg></a>
+          <a href="https://t.me/makarenko93yuliia" aria-label="Telegram"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          <a href="https://www.instagram.com/_prodim_?igsh=MWplN2h5b3N5bXp5aQ==" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="phone">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.5 19.79 19.79 0 01.34 2.84 2 2 0 012.33 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-.77a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <strong><a href="tel:+380684421137" class="phone-n">+380684421137</a></strong>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const DATA = {
+      nizhyn: {
+        title: "АЛЬТАНКА - НІЖИН",
+        subtitle: "Облаштування подвір'я та малих архітектурних форм",
+        text: [
+          "Команда proDIM створює не лише будинки, а й допомагає повністю облаштувати простір навколо них.",
+          "Якщо ви хочете зробити своє подвір'я комфортним, функціональним і затишним — ми можемо реалізувати для вас альтанки, садові гойдалки, дитячі майданчики, паркани та інші елементи благоустрою.",
+          "Ми беремо на себе всі етапи — від ідеї та проєктування до виготовлення і монтажу. Наше завдання — зняти з вас зайві турботи про облаштування простору та створити місце, де буде приємно відпочивати, проводити час із родиною та друзями.",
+          "Ми уважно прислухаємося до ваших побажань і допомагаємо втілити ідеї в реальний, продуманий до деталей простір.",
+          "proDIM — створюємо не лише будинки, а й атмосферу життя навколо них."
+        ],
+        media: Array.from({length: 10}, (_, i) => ({
+  type: "image",
+  src: `nizhyn/nizhyn (${i + 1}).jpg` }))
+      },
+      kyiv: {
+        title: "АЛЬТАНКА - КИЇВ",
+        subtitle: "Облаштування подвір'я та малих архітектурних форм",
+        text: [
+          "Команда proDIM створює не лише будинки, а й допомагає повністю облаштувати простір навколо них.",
+          "Якщо ви хочете зробити своє подвір'я комфортним, функціональним і затишним — ми можемо реалізувати для вас альтанки, садові гойдалки, дитячі майданчики, паркани та інші елементи благоустрою.",
+          "Ми беремо на себе всі етапи — від ідеї та проєктування до виготовлення і монтажу. Наше завдання — зняти з вас зайві турботи про облаштування простору та створити місце, де буде приємно відпочивати, проводити час із родиною та друзями.",
+          "Ми уважно прислухаємося до ваших побажань і допомагаємо втілити ідеї в реальний, продуманий до деталей простір.",
+          "proDIM — створюємо не лише будинки, а й атмосферу життя навколо них."
+        ],
+        media: [
+  ...Array.from({length: 6}, (_, i) => ({
+    type: "image",
+    src: `kyiv/kyiv (${i + 1}).jpg`
+  })),
+  ...Array.from({length: 3}, (_, i) => ({
+    type: "video",
+    src: `kyiv/kyiv (${i + 1}).mov`
+  })),
+  ...Array.from({length: 7}, (_, i) => ({
+    type: "video",
+    src: `kyiv/kyiv (${i + 1}).mp4`
+  }))
+]
+      },
+      chernihiv: {
+        title: "АЛЬТАНКА - ЧЕРНІГІВ",
+        subtitle: "Облаштування подвір'я та малих архітектурних форм",
+        text: [
+          "Команда proDIM створює не лише будинки, а й допомагає повністю облаштувати простір навколо них.",
+          "Якщо ви хочете зробити своє подвір'я комфортним, функціональним і затишним — ми можемо реалізувати для вас альтанки, садові гойдалки, дитячі майданчики, паркани та інші елементи благоустрою.",
+          "Ми беремо на себе всі етапи — від ідеї та проєктування до виготовлення і монтажу. Наше завдання — зняти з вас зайві турботи про облаштування простору та створити місце, де буде приємно відпочивати, проводити час із родиною та друзями.",
+          "Ми уважно прислухаємося до ваших побажань і допомагаємо втілити ідеї в реальний, продуманий до деталей простір.",
+          "proDIM — створюємо не лише будинки, а й атмосферу життя навколо них."
+        ],
+        media: [
+  ...Array.from({length: 9}, (_, i) => ({
+    type: "image",
+    src: `chernihiv/chernihiv (${i + 1}).jpg`
+  })),
+  ...Array.from({length: 2}, (_, i) => ({
+    type: "video",
+    src: `chernihiv/chernihiv (${i + 1}).mp4`
+  }))]
+      },
+      banket: {
+        title: "БАНКЕТНИЙ ЗАЛ -НІЖИН-",
+        subtitle: "Банкетний зал — 123 м²",
+        text: [
+          "Ми реалізували цей проєкт всього за 2 місяці — від концепції до готового простору.",
+          "Загальна площа об’єкта — 123 м², і він призначений для проведення святкових подій, урочистостей та важливих для вас моментів.",
+          "Це просторий, світлий та функціональний банкетний зал, де сучасний дизайн поєднується з комфортом. Завдяки модульному підходу реалізованого будинку, приміщення було швидко змонтовано без зайвого будівельного безладу на ділянці.",
+          "Цей проект демонструє наш підхід: швидко, якісно та з увагою до деталей — для того, щоб кожна подія була особливою."
+        ],
+        media: Array.from({length: 45}, (_, i) => ({
+  type: "image",
+  src: `banket/banket (${i + 1}).jpg` }))
+      },
+      mykulychyn: {
+        title: "БУДИНОК -МИКУЛИЧИН-",
+        subtitle: "Будинок у Карпатах — 62 м²",
+        text: [
+          "Цей проєкт ми реалізували високо в горах Карпат. Будинок був виготовлений на Чернігівщині та доставлений у гірську місцевість, що стало окремим логістичним викликом для нашої команди.",
+          "Загальна площа — 62 м². Будівництво виконано під ключ — від виробництва модулів до повного монтажу та готовності до проживання.",
+          "Проєкт демонструє головні переваги модульної технології: можливість транспортування на значні відстані, швидкий монтаж і надійність конструкції навіть у складних природних умовах.",
+          "proDIM — будуємо там, де інші лише планують."
+        ],
+        media: Array.from({length: 63}, (_, i) => ({
+  type: "image",
+  src: `mykulychyn/mykulychyn (${i + 1}).jpg` }))
+      },
+      khotynivka: {
+        title: "БУДИНОК -ХОТИНІВКА-",
+        subtitle: "Облаштування подвір'я та малих архітектурних форм",
+        text: [
+          "Команда proDIM створює не лише будинки, а й допомагає повністю облаштувати простір навколо них.",
+          "Якщо ви хочете зробити своє подвір'я комфортним, функціональним і затишним — ми можемо реалізувати для вас альтанки, садові гойдалки, дитячі майданчики, паркани та інші елементи благоустрою.",
+          "Ми беремо на себе всі етапи — від ідеї та проєктування до виготовлення і монтажу. Наше завдання — зняти з вас зайві турботи про облаштування простору та створити місце, де буде приємно відпочивати, проводити час із родиною та друзями.",
+          "Ми уважно прислухаємося до ваших побажань і допомагаємо втілити ідеї в реальний, продуманий до деталей простір.",
+          "proDIM — створюємо не лише будинки, а й атмосферу життя навколо них."
+        ],
+        media: [
+        ]
+      },
+      nosivka: {
+        title: "БУДИНОК -НОСІВКА-",
+        subtitle: "Сімейний будинок — 120 м² з терасою та укриттям",
+        text: [
+          "Просторий будинок площею 120 м², створений для комфортного та безпечного проживання сім’ї. У цьому проєкті ми особливу увагу приділили не лише зручному плануванню, а й питанню безпеки.",
+          "Будинок має повноцінне укриття, розраховане на дві кімнати, що забезпечує додатковий рівень захисту та спокою для родини. Це рішення стало важливою частиною концепції — адже сучасний дім має бути не лише комфортним, а й надійним.",
+          "Проєкт також включає велику терасу для відпочинку та окрему гардеробну, що додає функціональності у повсякденному житті.",
+          "Цей об’єкт демонструє наш підхід: поєднання затишку, продуманості та безпеки в одному просторі.",
+          "proDIM — будуємо дім, у якому спокійно жити."
+        ],
+        media: Array.from({length: 80}, (_, i) => ({
+  type: "image",
+  src: `nosivka/nosivka (${i + 1}).jpg` }))
+      },
+      playground: {
+        title: "ДИТЯЧІ МАЙДАНЧИКИ",
+        subtitle: "Облаштування подвір'я та малих архітектурних форм",
+        text: [
+          "Команда proDIM створює не лише будинки, а й допомагає повністю облаштувати простір навколо них.",
+          "Якщо ви хочете зробити своє подвір'я комфортним, функціональним і затишним — ми можемо реалізувати для вас альтанки, садові гойдалки, дитячі майданчики, паркани та інші елементи благоустрою.",
+          "Ми беремо на себе всі етапи — від ідеї та проєктування до виготовлення і монтажу. Наше завдання — зняти з вас зайві турботи про облаштування простору та створити місце, де буде приємно відпочивати, проводити час із родиною та друзями.",
+          "Ми уважно прислухаємося до ваших побажань і допомагаємо втілити ідеї в реальний, продуманий до деталей простір.",
+          "proDIM — створюємо не лише будинки, а й атмосферу життя навколо них."
+        ],
+        media: Array.from({length: 26}, (_, i) => ({
+  type: "image",
+  src: `playground/playground (${i + 1}).jpg` }))
+      },
+      garden: {
+        title: "САДОВІ ВИРОБИ",
+        subtitle: "Облаштування подвір'я та малих архітектурних форм",
+        text: [
+          "Команда proDIM створює не лише будинки, а й допомагає повністю облаштувати простір навколо них.",
+          "Якщо ви хочете зробити своє подвір'я комфортним, функціональним і затишним — ми можемо реалізувати для вас альтанки, садові гойдалки, дитячі майданчики, паркани та інші елементи благоустрою.",
+          "Ми беремо на себе всі етапи — від ідеї та проєктування до виготовлення і монтажу. Наше завдання — зняти з вас зайві турботи про облаштування простору та створити місце, де буде приємно відпочивати, проводити час із родиною та друзями.",
+          "Ми уважно прислухаємося до ваших побажань і допомагаємо втілити ідеї в реальний, продуманий до деталей простір.",
+          "proDIM — створюємо не лише будинки, а й атмосферу життя навколо них."
+        ],
+        media: [
+  ...Array.from({length: 168}, (_, i) => ({
+    type: "image",
+    src: `garden (${i + 1}).jpg`
+  })),
+  ...Array.from({length: 20}, (_, i) => ({
+    type: "video",
+    src: `garden (${i + 1}).mp4`
+  }))
+]
+      }
+    };
+
+    const city = new URLSearchParams(location.search).get('city') || 'nizhyn';
+const d = DATA[city];
+
+document.getElementById('proj-title').textContent = d.title;
+document.getElementById('proj-subtitle').textContent = d.subtitle;
+
+const textEl = document.getElementById('proj-text');
+textEl.innerHTML = "";
+
+d.text.forEach(t => {
+  const p = document.createElement('p');
+  p.textContent = t;
+  textEl.appendChild(p);
+});
+
+const MEDIA_PER_PAGE = 4;
+let cur = 0;
+let page = 0;
+
+const mainMedia = document.getElementById('main-media');
+const thumbsEl = document.getElementById('thumbs');
+
+const pages = getPages(d.media);
+
+function renderThumbs() {
+  thumbsEl.innerHTML = "";
+
+  pages[page].forEach((item, i) => {
+    const index = page * MEDIA_PER_PAGE + i;
+
+    const el = document.createElement('div');
+    el.className = "thumb-item";
+
+    if (item.type === "image") {
+      const img = document.createElement('img');
+      img.src = item.src;
+      el.appendChild(img);
+    } else {
+      const video = document.createElement('video');
+      video.src = item.src;
+      video.muted = true;
+      video.playsInline = true;
+      el.appendChild(video);
+    }
+
+    el.onclick = () => setMedia(index);
+
+    if (index === cur) el.classList.add('active');
+
+    thumbsEl.appendChild(el);
+  });
+}
+
+function setMedia(i) {
+  cur = (i + d.media.length) % d.media.length;
+  page = Math.floor(cur / MEDIA_PER_PAGE);
+
+  const item = d.media[cur];
+
+  mainMedia.innerHTML = "";
+
+  if (item.type === "image") {
+    const img = document.createElement('img');
+    img.src = item.src;
+    mainMedia.appendChild(img);
+  } else {
+    const video = document.createElement('video');
+    video.src = item.src;
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    mainMedia.appendChild(video);
+  }
+
+  renderThumbs();
+}
+
+function getPages(arr) {
+  const pages = [];
+  for (let i = 0; i < arr.length; i += MEDIA_PER_PAGE) {
+    pages.push(arr.slice(i, i + MEDIA_PER_PAGE));
+  }
+  return pages;
+}
+
+document.getElementById('prev').onclick = () => {
+  setMedia(cur - 1);
+};
+
+document.getElementById('next').onclick = () => {
+  setMedia(cur + 1);
+};
+
+setMedia(0);
+const lightbox = document.getElementById('lightbox');
+const lbMedia = document.getElementById('lightbox-media');
+
+// відкриття по кліку на головне медіа
+mainMedia.onclick = () => {
+  openLightbox();
+};
+
+function openLightbox() {
+  lightbox.classList.add('active');
+  renderLightboxMedia();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lbMedia.innerHTML = "";
+}
+
+function renderLightboxMedia() {
+  const item = d.media[cur];
+
+  lbMedia.innerHTML = "";
+
+  if (item.type === "image") {
+    const img = document.createElement('img');
+    img.src = item.src;
+    lbMedia.appendChild(img);
+  } else {
+    const video = document.createElement('video');
+    video.src = item.src;
+    video.controls = true;
+    video.autoplay = true;
+    lbMedia.appendChild(video);
+  }
+}
+
+// кнопки
+document.getElementById('lb-prev').onclick = () => {
+  setMedia(cur - 1);
+  renderLightboxMedia();
+};
+
+document.getElementById('lb-next').onclick = () => {
+  setMedia(cur + 1);
+  renderLightboxMedia();
+};
+
+// закриття
+document.getElementById('lb-close').onclick = closeLightbox;
+
+// клік по фону
+lightbox.onclick = (e) => {
+  if (e.target === lightbox) closeLightbox();
+};
+
+// ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
+const video = document.createElement('video');
+video.src = item.src;
+video.controls = true;
+video.autoplay = true;
+video.playsInline = true;
+video.style.maxHeight = "100%";
+video.style.maxWidth = "100%";
+</script>
+</body>
+</html>

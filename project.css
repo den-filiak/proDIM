@@ -1,0 +1,478 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#lightbox-media img,
+#lightbox-media video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* закрити */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* стрілки більші */
+.lightbox .arrow {
+  width: 60px;
+  height: 60px;
+}
+
+.lightbox .arrow svg {
+  width: 28px;
+  height: 28px;
+}
+
+body {
+  background: #0F1115;
+  font-family: 'Manrope', sans-serif;
+  color: #A0A6AD;
+  padding: 0 128px 48px;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo { height: 72px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.6)); }
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 200;
+}
+
+.burger span {
+  display: block;
+  width: 32px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: .3s;
+}
+
+/* ── OVERLAY MENU ── */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.overlay-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  cursor: pointer;
+}
+
+nav {
+  position: absolute;
+  top: 0; right: 0;
+  width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 80px 32px 32px;
+  background: #0F1115;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+}
+.menu-back {
+  display: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+#nav-open:checked ~ .overlay { opacity: 1; pointer-events: all; }
+#nav-open:checked ~ .overlay nav { transform: translateX(0); }
+
+/* ── NAV CARDS ── */
+.nc {
+  flex: 1;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+  background: var(--bg) center / cover no-repeat;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.3);
+  transition: background .3s ease;
+}
+
+.nc span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform .3s ease;
+}
+
+.nc small {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  color: #A0A6AD;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+  z-index: 2;
+}
+
+.nc:hover::before { background: rgba(0,0,0,.8); }
+.nc:hover span { transform: scale(.85); }
+.nc:hover small { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── CONTENT ── */
+.content {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.text-col {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #fff;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: #A0A6AD;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#proj-text p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+/* ── GALLERY ── */
+.gallery-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-main {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* ✅ фікс адаптиву */
+  position: relative;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* або contain якщо не хочеш обрізання */
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.15);
+  color: #fff;
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  z-index: 2;
+}
+.arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.arrow {
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+.arrow:hover {
+  background: rgba(212,163,115,.2);
+  border-color: #D4A373;
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+#main-media {
+  width: 100%;
+  height: 100%;
+}
+
+#main-media img,
+#main-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* thumbs */
+.thumb-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  border: 2px solid transparent;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.thumb-item img,
+.thumb-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-item.active {
+  border-color: #D4A373;
+}
+
+/* ✅ ВИПРАВЛЕНІ THUMBS */
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.thumbs img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color .2s, opacity .2s, transform .2s;
+  opacity: .65;
+}
+
+.thumbs img:hover {
+  transform: scale(1.05);
+}
+
+.thumbs img.active,
+.thumbs img:hover {
+  border-color: #D4A373;
+  opacity: 1;
+}
+
+/* ── FOOTER ── */
+footer { margin-top: 32px; }
+
+hr {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto 32px;
+  border: none;
+  border-top: 1px solid #A0A6AD;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.foot > img { height: 80px; }
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.socials strong {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.icons { display: flex; gap: 20px; }
+
+.icons a {
+  display: flex;
+  opacity: .85;
+  transition: opacity .2s;
+}
+
+.icons a:hover { opacity: 1; }
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phone strong {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.phone-n {
+  text-decoration: none;
+  color: #fff;
+}
+
+.phone-n:hover { color: #A0A6AD; }
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  body { padding: 0 48px 40px; }
+  h1 { font-size: 32px; }
+  nav { width: 300px; }
+  .content { gap: 32px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  body { padding: 0 24px 32px; }
+
+  nav {
+    width: 100%;
+    padding: 80px 24px 32px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .text-col {
+    width: 100%;
+    order: 2;
+  }
+
+  .gallery-col {
+    order: 1;
+  }
+
+  h1 { font-size: 28px; }
+  .subtitle { font-size: 16px; }
+  #proj-text p { font-size: 16px; }
+
+  hr { width: 100%; margin-bottom: 20px; }
+  .foot { flex-wrap: wrap; }
+  .foot > img { height: 56px; order: 1; }
+  .phone { order: 2; }
+  .phone strong { font-size: 16px; }
+  .socials { order: 3; width: 100%; margin-top: 20px; }
+  .socials strong { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+  .menu-back { display: block; }
+}
+
+@media (max-width: 480px) {
+  body { padding: 0 16px 24px; }
+  h1 { font-size: 24px; }
+}

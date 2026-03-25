@@ -1,0 +1,246 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0F1115;
+  font-family: 'Manrope', sans-serif;
+  color: #A0A6AD;
+  padding: 24px 128px 48px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 24px;
+  left: 128px;
+  height: 80px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+}
+
+main {
+  display: flex;
+  gap: 100px;
+  margin-top: 120px;
+}
+
+article { flex: 0 0 60%; }
+
+h1 {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 32px;
+}
+
+article p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  flex: 1;
+  min-height: 180px;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+  background: var(--bg) center / cover no-repeat;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+.card span {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.card small {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #A0A6AD;
+  font-size: 24px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.card:hover::before { background: rgba(0,0,0,0.8); }
+.card:hover span { transform: scale(0.8); }
+.card:hover small { opacity: 1; }
+
+footer { margin-top: 32px; }
+
+hr {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto 32px;
+  border: none;
+  border-top: 1px solid #A0A6AD;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.foot > img { height: 80px; }
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.socials strong {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icons a { display: flex; }
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.phone strong {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.phone-n {
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: 0.3s;
+}
+
+.phone-n:hover {
+  color: #A0A6AD;
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  body { padding: 24px 48px 40px; }
+
+  .logo { left: 48px; height: 64px; }
+
+  main { gap: 48px; margin-top: 100px; }
+
+  h1 { font-size: 40px; }
+
+  article p { font-size: 18px; }
+
+  .card span { font-size: 40px; }
+
+  hr { width: 100%; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  body { padding: 24px 32px 32px; }
+
+  .logo { position: static; display: block; height: 64px; margin-bottom: 32px; }
+
+  main {
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 0;
+  }
+
+  article { flex: none; width: 100%; }
+
+  h1 { font-size: 32px; margin-bottom: 24px; }
+
+  article p { font-size: 16px; margin-bottom: 16px; }
+
+  aside {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .card {
+    min-height: 160px;
+    flex: none;
+  }
+
+  .card::before { background: rgba(0,0,0,0.3); }
+
+  .card span { font-size: 32px; }
+
+  hr { width: 100%; margin-bottom: 20px; }
+
+  .foot {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .foot > img { height: 60px; order: 1; }
+
+  .phone { order: 2; }
+
+  .phone strong { font-size: 18px; }
+
+  .socials {
+    order: 3;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .socials strong { font-size: 16px; }
+}
+
+/* ── SMALL MOBILE ── */
+@media (max-width: 480px) {
+  body { padding: 20px 20px 28px; }
+
+  h1 { font-size: 28px; }
+
+  .card span { font-size: 28px; }
+
+  .phone strong { font-size: 16px; }
+
+  .icons { gap: 14px; }
+}
