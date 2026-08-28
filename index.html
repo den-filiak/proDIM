@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+<script>(function(){var t=localStorage.getItem("pd-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>pro DIM</title>
+  <meta name="description" content="proDIM — модульні дерев'яні будинки під ключ від 1 до 2 місяців. Каталог, ціни та реалізовані проєкти по всій Україні.">
+  <link rel="canonical" href="https://prodim.chernihiv.ua/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="pro DIM — модульні дерев'яні будинки під ключ">
+  <meta property="og:description" content="proDIM — модульні дерев'яні будинки під ключ від 1 до 2 місяців. Каталог, ціни та реалізовані проєкти по всій Україні.">
+  <meta property="og:image" content="https://prodim.chernihiv.ua/logo.png">
+  <meta property="og:url" content="https://prodim.chernihiv.ua/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="icon" href="logo.png" type="image/png">
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js" defer></script>
+<script src="theme.js" defer></script>
 </head>
 
 <body>
 
-<img src="logo.png" alt="pro DIM" class="logo-mobile">
+<div class="pd-floating-controls">
+<div class="pd-theme-toggle">
+  <span class="pd-theme-btn active" data-theme="dark" aria-label="Темна тема"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+  <span class="pd-theme-btn" data-theme="light" aria-label="Світла тема"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+</div>
+
+<div class="pd-lang-toggle">
+  <span class="pd-lang-btn" data-lang="uk">UA</span>
+  <span class="pd-lang-btn" data-lang="en">EN</span>
+</div>
+</div>
+
 
 <a href="about.html" class="section" style="--bg:url('img/about.png')">
-  <p>ПРО НАС</p>
-  <small>∧<br>Дізнатись більше</small>
+  <p data-en="ABOUT US">ПРО НАС</p>
+  <small></small>
 </a>
 
 <a href="catalog.html" class="section mid" style="--bg:url(img/catalog.png)">
   <img src="logo.png" alt="pro DIM" class="logo">
-  <p>КАТАЛОГ</p>
-  <small>∧<br>Дізнатись більше</small>
+  <p data-en="CATALOG">КАТАЛОГ</p>
+  <small></small>
 </a>
 
 <a href="contact.html" class="section" style="--bg:url('img/contact.png')">
-  <p>КОНТАКТИ</p>
-  <small>∧<br>Дізнатись більше</small>
+  <p data-en="CONTACT">КОНТАКТИ</p>
+  <small></small>
 </a>
 
 </body>

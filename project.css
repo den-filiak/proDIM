@@ -50,7 +50,7 @@
   top: 20px;
   right: 20px;
   font-size: 28px;
-  color: #fff;
+  color: var(--c-text);
   background: none;
   border: none;
   cursor: pointer;
@@ -68,138 +68,14 @@
 }
 
 body {
-  background: #0F1115;
+  background: var(--c-bg);
   font-family: 'Manrope', sans-serif;
-  color: #A0A6AD;
+  color: var(--c-muted);
   padding: 0 128px 48px;
 }
 
-/* ── HEADER ── */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0 32px;
-  position: relative;
-  z-index: 10;
-}
 
-.logo { height: 72px; display: block; filter: drop-shadow(0 4px 12px rgba(0,0,0,.6)); }
 
-.burger {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  padding: 4px;
-  position: relative;
-  z-index: 200;
-}
-
-.burger span {
-  display: block;
-  width: 32px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-  transition: .3s;
-}
-
-/* ── OVERLAY MENU ── */
-.overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  bottom: 0;
-  z-index: 100;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-
-.overlay-bg {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.8);
-  cursor: pointer;
-}
-
-nav {
-  position: absolute;
-  top: 0; right: 0;
-  width: 380px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 80px 32px 32px;
-  background: #0F1115;
-  transform: translateX(100%);
-  transition: transform .3s ease;
-}
-.menu-back {
-  display: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 16px;
-}
-
-#nav-open:checked ~ .overlay { opacity: 1; pointer-events: all; }
-#nav-open:checked ~ .overlay nav { transform: translateX(0); }
-
-/* ── NAV CARDS ── */
-.nc {
-  flex: 1;
-  border: 2px solid #D4A373;
-  border-radius: 8px;
-  background: var(--bg) center / cover no-repeat;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nc::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.3);
-  transition: background .3s ease;
-}
-
-.nc span {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  font-size: 26px;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.2;
-  transition: transform .3s ease;
-}
-
-.nc small {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  color: #A0A6AD;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  text-align: center;
-  line-height: 1.4;
-  opacity: 0;
-  transition: opacity .3s, transform .3s;
-  z-index: 2;
-}
-
-.nc:hover::before { background: rgba(0,0,0,.8); }
-.nc:hover span { transform: scale(.85); }
-.nc:hover small { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* ── CONTENT ── */
 .content {
@@ -216,16 +92,16 @@ nav {
 }
 
 h1 {
-  color: #fff;
+  color: var(--c-text);
   font-size: 40px;
   font-weight: 700;
   padding-bottom: 10px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--c-text);
   line-height: 1.2;
 }
 
 .subtitle {
-  color: #A0A6AD;
+  color: var(--c-muted);
   font-size: 18px;
   font-weight: 500;
 }
@@ -249,8 +125,8 @@ h1 {
   width: 100%;
   aspect-ratio: 4 / 3; /* ✅ фікс адаптиву */
   position: relative;
-  border: 2px solid #D4A373;
-  border-radius: 8px;
+  border: 2px solid var(--c-accent);
+  border-radius: 9px;
   overflow: hidden;
 }
 
@@ -268,7 +144,7 @@ h1 {
   background: rgba(0,0,0,.55);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,.15);
-  color: #fff;
+  color: var(--c-text);
   font-size: 22px;
   width: 40px;
   height: 40px;
@@ -283,7 +159,7 @@ h1 {
 .arrow svg {
   width: 20px;
   height: 20px;
-  stroke: #fff;
+  stroke: var(--c-text);
   stroke-width: 2.5;
   fill: none;
 }
@@ -292,11 +168,11 @@ h1 {
   background: rgba(0,0,0,.35);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,.15);
+}@media (hover:hover) and (pointer:fine){
+  .arrow:hover {
+  background: rgba(var(--c-accent-rgb),.2);
+  border-color: var(--c-accent);
 }
-
-.arrow:hover {
-  background: rgba(212,163,115,.2);
-  border-color: #D4A373;
 }
 
 .prev { left: 12px; }
@@ -321,7 +197,7 @@ h1 {
   cursor: pointer;
   border: 2px solid transparent;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 4.4px;
 }
 
 .thumb-item img,
@@ -332,7 +208,7 @@ h1 {
 }
 
 .thumb-item.active {
-  border-color: #D4A373;
+  border-color: var(--c-accent);
 }
 
 /* ✅ ВИПРАВЛЕНІ THUMBS */
@@ -347,21 +223,24 @@ h1 {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 4.4px;
   border: 2px solid transparent;
   cursor: pointer;
   transition: border-color .2s, opacity .2s, transform .2s;
   opacity: .65;
-}
-
-.thumbs img:hover {
+}@media (hover:hover) and (pointer:fine){
+  .thumbs img:hover {
   transform: scale(1.05);
 }
-
-.thumbs img.active,
-.thumbs img:hover {
-  border-color: #D4A373;
+}.thumbs img.active {
+  border-color: var(--c-accent);
   opacity: 1;
+}
+@media (hover:hover) and (pointer:fine){
+  .thumbs img:hover {
+  border-color: var(--c-accent);
+  opacity: 1;
+}
 }
 
 /* ── FOOTER ── */
@@ -372,7 +251,7 @@ hr {
   max-width: 100%;
   margin: 0 auto 32px;
   border: none;
-  border-top: 1px solid #A0A6AD;
+  border-top: 1px solid var(--c-muted);
 }
 
 .foot {
@@ -391,7 +270,7 @@ hr {
 }
 
 .socials strong {
-  color: #fff;
+  color: var(--c-text);
   font-size: 20px;
   font-weight: 700;
 }
@@ -402,9 +281,9 @@ hr {
   display: flex;
   opacity: .85;
   transition: opacity .2s;
+}@media (hover:hover) and (pointer:fine){
+  .icons a:hover { opacity: 1; }
 }
-
-.icons a:hover { opacity: 1; }
 
 .phone {
   display: flex;
@@ -419,10 +298,10 @@ hr {
 
 .phone-n {
   text-decoration: none;
-  color: #fff;
+  color: var(--c-text);
+}@media (hover:hover) and (pointer:fine){
+  .phone-n:hover { color: var(--c-muted); }
 }
-
-.phone-n:hover { color: #A0A6AD; }
 
 /* ── TABLET ── */
 @media (max-width: 1024px) {
@@ -468,9 +347,6 @@ hr {
   .socials strong { font-size: 16px; }
 }
 
-@media (max-width: 768px) {
-  .menu-back { display: block; }
-}
 
 @media (max-width: 480px) {
   body { padding: 0 16px 24px; }

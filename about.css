@@ -1,10 +1,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #0F1115;
+  background: var(--c-bg);
   font-family: 'Manrope', sans-serif;
-  color: #A0A6AD;
-  padding: 24px 128px 48px;
+  color: var(--c-muted);
+  padding: 0 128px 48px;
   position: relative;
 }
 
@@ -13,23 +13,22 @@ body {
   top: 24px;
   left: 128px;
   height: 80px;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,calc(0.6 * var(--c-shadow-op))));
 }
 
 main {
   display: flex;
   gap: 100px;
-  margin-top: 120px;
 }
 
 article { flex: 0 0 60%; }
 
 h1 {
-  color: #fff;
+  color: var(--c-text);
   font-size: 48px;
   font-weight: 700;
   padding-bottom: 12px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--c-text);
   margin-bottom: 32px;
 }
 
@@ -48,10 +47,10 @@ aside {
 }
 
 .card {
-  flex: 1;
-  min-height: 180px;
-  border: 2px solid #D4A373;
-  border-radius: 8px;
+  flex: 0 0 200px;
+  min-height: 200px;
+  border: 2px solid var(--c-accent);
+  border-radius: 9px;
   background: var(--bg) center / cover no-repeat;
   overflow: hidden;
   position: relative;
@@ -93,11 +92,11 @@ aside {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
+}@media (hover:hover) and (pointer:fine){
+  .card:hover::before { background: rgba(0,0,0,0.8); }
+}@media (hover:hover) and (pointer:fine){
+  .card:hover small { opacity: 1; }
 }
-
-.card:hover::before { background: rgba(0,0,0,0.8); }
-.card:hover span { transform: scale(0.8); }
-.card:hover small { opacity: 1; }
 
 footer { margin-top: 32px; }
 
@@ -106,7 +105,7 @@ hr {
   max-width: 100%;
   margin: 0 auto 32px;
   border: none;
-  border-top: 1px solid #A0A6AD;
+  border-top: 1px solid var(--c-muted);
 }
 
 .foot {
@@ -125,7 +124,7 @@ hr {
 }
 
 .socials strong {
-  color: #fff;
+  color: var(--c-text);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -143,7 +142,7 @@ hr {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: var(--c-text);
 }
 
 .phone strong {
@@ -153,21 +152,21 @@ hr {
 
 .phone-n {
   text-decoration: none;
-  color: #FFFFFF;
+  color: var(--c-text);
   transition: 0.3s;
+}@media (hover:hover) and (pointer:fine){
+  .phone-n:hover {
+  color: var(--c-muted);
 }
-
-.phone-n:hover {
-  color: #A0A6AD;
 }
 
 /* ── TABLET ── */
 @media (max-width: 1024px) {
-  body { padding: 24px 48px 40px; }
+  body { padding: 0 48px 40px; }
 
   .logo { left: 48px; height: 64px; }
 
-  main { gap: 48px; margin-top: 100px; }
+  main { gap: 48px; }
 
   h1 { font-size: 40px; }
 
@@ -180,7 +179,7 @@ hr {
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  body { padding: 24px 32px 32px; }
+  body { padding: 0 32px 32px; }
 
   .logo { position: static; display: block; height: 64px; margin-bottom: 32px; }
 
@@ -234,7 +233,7 @@ hr {
 
 /* ── SMALL MOBILE ── */
 @media (max-width: 480px) {
-  body { padding: 20px 20px 28px; }
+  body { padding: 0 20px 28px; }
 
   h1 { font-size: 28px; }
 
@@ -244,3 +243,8 @@ hr {
 
   .icons { gap: 14px; }
 }
+
+
+/* тап-фідбек для сенсорних екранів (дзеркалить :hover, але не залипає) */
+.card:active::before { background: rgba(0,0,0,0.8); }
+.card:active small { opacity: 1; }

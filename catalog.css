@@ -1,7 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #0F1115;
+  background: var(--c-bg);
   font-family: 'Manrope', sans-serif;
   display: flex;
   align-items: center;
@@ -19,17 +19,25 @@ body {
   justify-content: center;
   padding: 0 40px;
   z-index: 2;
+  transition: transform .3s ease;
 }
+
+:root[data-theme="light"] .logo-wrap img{filter:invert(1)}
 
 .logo-wrap img {
   height: 120px;
-  filter: drop-shadow(0 4px 16px rgba(0,0,0,.7));
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,calc(.7 * var(--c-shadow-op))));
 }
+
+@media (hover:hover) and (pointer:fine){
+  .logo-wrap:hover { transform: scale(1.06); }
+}
+.logo-wrap:active { transform: scale(1.06); }
 
 .card {
   flex: 1;
-  border: 2px solid #D4A373;
-  border-radius: 8px;
+  border: 2px solid var(--c-accent);
+  border-radius: 9px;
   background: var(--bg) center / cover no-repeat;
   overflow: hidden;
   position: relative;
@@ -43,8 +51,9 @@ body {
   height: calc(100vh - 128px);
   align-self: flex-end;
   margin-bottom: 0;
-  border-radius:8px 8px 0 0;
+  border-radius:9px 8px 0 0;
   border-bottom: none;
+  transform-origin: bottom center;
 }
 
 .card.right {
@@ -53,6 +62,7 @@ body {
   margin-top: 0;
   border-radius:0 0 8px 8px;
   border-top:none;
+  transform-origin: top center;
 }
 
 .card::before {
@@ -87,11 +97,11 @@ body {
   opacity: 0;
   transition: opacity .3s ease, transform .3s ease;
   z-index: 2;
+}@media (hover:hover) and (pointer:fine){
+  .card:hover::before { background: rgba(0,0,0,.8); }
+}@media (hover:hover) and (pointer:fine){
+  .card:hover small { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
-
-.card:hover::before { background: rgba(0,0,0,.8); }
-.card:hover span { transform: scale(.8); }
-.card:hover small { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* ── TABLET / MOBILE ── */
 @media (max-width: 1024px) {
@@ -117,6 +127,7 @@ body {
     margin-right: 64px;
     border-radius: 0 4px 4px 0;
     border-left: none;
+    transform-origin: left center;
   }
 
   .card.right {
@@ -125,8 +136,9 @@ body {
     align-self: stretch;
     margin-left: 64px;
     margin-right: 0;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4.4px 0 0 4px;
     border-right: none;
+    transform-origin: right center;
   }
 
   .card span { font-size: 32px; padding: 0 24px 32px; }
@@ -144,3 +156,8 @@ body {
   .card span { font-size: 24px; padding: 0 16px 24px; }
   .logo-wrap img { height: 80px; }
 }
+
+
+/* тап-фідбек для сенсорних екранів (дзеркалить :hover, але не залипає) */
+.card:active::before { background: rgba(0,0,0,.8); }
+.card:active small { opacity: 1; transform: translateX(-50%) translateY(0); }

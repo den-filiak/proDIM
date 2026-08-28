@@ -1,0 +1,357 @@
+/* =========================================================
+   pro DIM — спільна дизайн-система (v2)
+   ========================================================= */
+
+:root{
+  /* ===== Палітра "Rich Look" — dark, warm, luxury, timeless, elegant ===== */
+  --c-bg:        #0D0D0D;
+  --c-surface:   #3A2C22;
+  --c-accent:    #C8A96B;
+  --c-accent-dim:#8B7355;
+  --c-text:      #E8DCC0;
+  --c-muted:     #9C8A72;
+  --c-included:  #E8DCC0;
+  --c-excluded:  #5A4E40;
+  --c-line:      rgba(232,220,192,.16);
+  --c-card:      #2B1F1A;
+  --c-bg-rgb:    13,13,13;
+  --c-text-rgb:  232,220,192;
+  --c-accent-rgb:200,169,107;
+  --c-shadow-op: 1;
+
+  --fs-2xs: 14px; --fs-xs: 16px; --fs-sm: 18px; --fs-md: 20px;
+  --fs-lg:  24px; --fs-xl: 32px; --fs-2xl: 40px; --fs-hero:48px;
+
+  --sp-1: 8px; --sp-2: 16px; --sp-3: 24px; --sp-4: 32px;
+  --sp-5: 48px; --sp-6: 64px; --sp-7: 80px;
+
+  /* єдина шкала бокових відступів — і для контенту, і для шапки */
+  --pad-x: 128px;
+  --pad-bottom: 48px;
+
+  --radius: 9px;
+  --header-h: 96px;
+  --ease: .3s cubic-bezier(.4,0,.2,1);
+}
+
+/* ===== Світла тема — та сама гама, світлі й темні тони поміняні місцями ===== */
+:root[data-theme="light"]{
+  --c-bg:        #E8DCC0;
+  --c-surface:   #FFFFFF;
+  --c-accent:    #4A3527;
+  --c-accent-dim:#3A2A1E;
+  --c-text:      #1A1512;
+  --c-muted:     #6B5540;
+  --c-included:  #1A1512;
+  --c-excluded:  #C2B49B;
+  --c-line:      rgba(26,21,18,.22);
+  --c-card:      #FFFFFF;
+  --c-bg-rgb:    232,220,192;
+  --c-text-rgb:  26,21,18;
+  --c-accent-rgb:74,53,39;
+  --c-shadow-op: 0;
+}
+
+@media (max-width:1024px){ :root{ --pad-x:48px; --header-h:88px; } }
+@media (max-width:768px) { :root{ --pad-x:32px; --pad-bottom:32px; --header-h:80px; } }
+@media (max-width:480px) { :root{ --pad-x:20px; --pad-bottom:28px; } }
+
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html,body{background:var(--c-bg)}
+body{
+  font-family:'Manrope',sans-serif;
+  color:var(--c-text);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  position:relative;
+  /* легка штукатурна текстура — чиста CSS/SVG, без запиту зображення */
+  background-color:var(--c-bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='3' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.5'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-blend-mode:overlay;
+  background-size:240px 240px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;background:none;border:none;color:inherit;cursor:pointer}
+
+a:focus-visible,label:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--c-accent);
+  outline-offset:3px;
+  border-radius:2.2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+
+/* =========================================================
+   HEADER — вирівняний рівно з межами контенту, з тінню на скролі
+   ========================================================= */
+.pd-header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:80;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:var(--header-h);
+  padding:0 var(--pad-x);
+  background:linear-gradient(to bottom, rgba(var(--c-bg-rgb),.9) 0%, rgba(var(--c-bg-rgb),.68) 75%, rgba(var(--c-bg-rgb),.35) 100%);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 var(--c-line), 0 8px 24px -12px rgba(0,0,0,calc(.6 * var(--c-shadow-op)));
+}
+.pd-logo{display:flex;align-items:center}
+.pd-header-left{display:flex;align-items:center}
+.pd-logo img{height:40px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,var(--c-shadow-op)))}
+:root[data-theme="light"] .pd-logo img{filter:invert(1)}
+
+.pd-back{
+  display:flex;align-items:center;gap:6px;
+  margin-left:var(--sp-3);
+  color:var(--c-muted);
+  font-family:'Manrope',sans-serif;
+  font-size:14px;font-weight:600;
+  cursor:pointer;
+  transition:color var(--ease);
+  filter:drop-shadow(0 1px 4px rgba(0,0,0,calc(.4*var(--c-shadow-op))));
+}
+@media (hover:hover) and (pointer:fine){
+  .pd-back:hover{color:var(--c-text)}
+}
+.pd-back:active{color:var(--c-text)}
+@media (max-width:640px){
+  .pd-back span{display:none}
+  .pd-back{margin-left:var(--sp-2)}
+}
+:root[data-theme="light"] .pd-foot>img{filter:invert(1)}
+
+.pd-burger{
+  width:44px;height:44px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:background var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.pd-burger span{
+  width:22px;height:2px;background:var(--c-text);border-radius:2.2px;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,calc(.5 * var(--c-shadow-op))));
+  transition:transform var(--ease),opacity var(--ease);
+}
+@media (hover:hover) and (pointer:fine){
+  .pd-burger:hover{background:rgba(var(--c-text-rgb),.1)}
+}
+
+/* Перемикач мови */
+.pd-lang-toggle{
+  display:flex;align-items:center;gap:2px;
+  border:1px solid var(--c-line);
+  border-radius:22px;
+  padding:3px;
+  background:rgba(var(--c-text-rgb),.03);
+}
+.pd-lang-btn{
+  font-family:'Manrope',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.03em;
+  color:var(--c-muted);
+  padding:4px 10px;
+  border-radius:18px;
+  cursor:pointer;
+  transition:background var(--ease), color var(--ease);
+}
+.pd-lang-btn.active{background:var(--c-accent);color:var(--c-bg)}
+@media (hover:hover) and (pointer:fine){
+  .pd-lang-btn:not(.active):hover{color:var(--c-text)}
+}
+.pd-header-right{display:flex;align-items:center;gap:var(--sp-2)}
+
+/* Перемикач теми (темна / світла) */
+.pd-theme-toggle{
+  display:flex;align-items:center;gap:2px;
+  border:1px solid var(--c-line);
+  border-radius:22px;
+  padding:3px;
+  background:rgba(var(--c-text-rgb),.03);
+}
+.pd-theme-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:26px;height:26px;
+  color:var(--c-muted);
+  border-radius:50%;
+  cursor:pointer;
+  transition:background var(--ease), color var(--ease);
+}
+.pd-theme-btn svg{width:15px;height:15px}
+.pd-theme-btn.active{background:var(--c-accent);color:var(--c-bg)}
+@media (hover:hover) and (pointer:fine){
+  .pd-theme-btn:not(.active):hover{color:var(--c-text)}
+}
+.pd-theme-toggle-floating{
+  position:static;
+}
+
+/* Обгортка для плаваючих кнопок (головна, каталог) — надійний gap замість ручних відступів */
+.pd-floating-controls{
+  position:fixed;top:var(--sp-2);right:var(--pad-x);
+  z-index:80;
+  display:flex;align-items:center;gap:var(--sp-2);
+}
+/* на плаваючих сторінках немає темної підложки хедера позаду —
+   тому рамку/фон перемикачів робимо помітнішими самі по собі */
+.pd-floating-controls .pd-theme-toggle,
+.pd-floating-controls .pd-lang-toggle{
+  border-color:rgba(var(--c-bg-rgb),.9);
+  background:rgba(var(--c-bg-rgb),.65);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  box-shadow:0 4px 14px -4px rgba(0,0,0,calc(.5*var(--c-shadow-op)));
+}
+.pd-lang-toggle-floating{
+  position:static;
+}
+
+/* сторінки без фіксованого хедера (index) використовують клас no-header —
+   тоді ці правила просто ніде не застосовуються */
+
+/* =========================================================
+   NAV OVERLAY — відкривається в центр, креативніше, з робочим закриттям
+   ========================================================= */
+#pd-nav-toggle{position:absolute;opacity:0;pointer-events:none}
+
+.pd-nav-overlay{
+  position:fixed;inset:0;
+  z-index:90;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity var(--ease), visibility 0s var(--ease);
+}
+#pd-nav-toggle:checked ~ .pd-nav-overlay{
+  visibility:visible;
+  opacity:1;
+  transition:opacity var(--ease);
+}
+.pd-nav-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(60% 50% at 50% 45%, rgba(var(--c-accent-rgb),.10), transparent 70%),
+    rgba(var(--c-bg-rgb),.96);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  cursor:pointer;
+}
+.pd-nav{
+  position:relative;
+  height:100%;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:var(--sp-3);
+  pointer-events:none;
+}
+.pd-nav a{ pointer-events:auto; }
+.pd-nav a{
+  font-size:var(--fs-lg);
+  font-weight:700;
+  letter-spacing:.02em;
+  padding:2px 2px 6px;
+  position:relative;
+  text-align:center;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity var(--ease), transform var(--ease), color var(--ease);
+}
+#pd-nav-toggle:checked ~ .pd-nav-overlay .pd-nav a{opacity:1;transform:translateY(0)}
+.pd-nav a:nth-child(1){transition-delay:.05s}
+.pd-nav a:nth-child(2){transition-delay:.10s}
+.pd-nav a:nth-child(3){transition-delay:.15s}
+.pd-nav a:nth-child(4){transition-delay:.20s}
+.pd-nav a:nth-child(5){transition-delay:.25s}
+.pd-nav a:nth-child(6){transition-delay:.30s}
+.pd-nav a::after{
+  content:'';
+  position:absolute;left:50%;bottom:0;
+  width:0;height:2px;
+  background:var(--c-accent);
+  transition:width var(--ease), left var(--ease);
+}
+@media (hover:hover) and (pointer:fine){
+  .pd-nav a:hover::after{width:100%;left:0}
+  .pd-nav a:hover{color:var(--c-accent)}
+}
+.pd-nav a:active{color:var(--c-accent)}
+
+/* Кнопка закриття — окреме, явно клікабельне коло з іконкою X */
+.pd-nav-close{
+  position:absolute;top:var(--sp-3);right:var(--pad-x);
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  border:1px solid var(--c-line);
+  color:var(--c-text);
+  cursor:pointer;
+  transition:background var(--ease), border-color var(--ease), transform var(--ease);
+}
+@media (hover:hover) and (pointer:fine){
+  .pd-nav-close:hover{background:rgba(var(--c-accent-rgb),.12);border-color:var(--c-accent);color:var(--c-accent)}
+}
+.pd-nav-close:active{transform:scale(.92)}
+
+/* Бургер → хрестик, коли меню відкрите */
+#pd-nav-toggle:checked ~ .pd-header .pd-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+#pd-nav-toggle:checked ~ .pd-header .pd-burger span:nth-child(2){opacity:0}
+#pd-nav-toggle:checked ~ .pd-header .pd-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.pd-footer{
+  padding:var(--sp-5) var(--pad-x) var(--pad-bottom);
+  margin-top:var(--sp-5);
+  background:linear-gradient(to top, rgba(var(--c-bg-rgb),.9) 0%, rgba(var(--c-bg-rgb),.5) 60%, transparent 100%);
+  position:relative;
+}
+.pd-footer hr{border:none;border-top:1px solid var(--c-line);margin-bottom:var(--sp-3)}
+.pd-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);flex-wrap:wrap}
+.pd-foot > img{height:56px}
+.pd-socials{display:flex;flex-direction:column;align-items:center;gap:var(--sp-1)}
+.pd-socials strong{font-size:var(--fs-2xs);color:var(--c-muted);font-weight:500;letter-spacing:.03em;text-align:center}
+.pd-icons{display:flex;gap:var(--sp-2)}
+.pd-icons a{display:flex;color:var(--c-text);transition:transform var(--ease),color var(--ease)}
+@media (hover:hover) and (pointer:fine){
+  .pd-icons a:hover{color:var(--c-accent);transform:translateY(-2px)}
+}
+.pd-icons a:active{color:var(--c-accent)}
+.pd-phone{display:flex;align-items:center;gap:var(--sp-1)}
+.pd-phone-n{font-size:var(--fs-xs);font-weight:700}
+@media (hover:hover) and (pointer:fine){
+  .pd-phone-n:hover{color:var(--c-accent)}
+}
+.pd-phone-n:active{color:var(--c-accent)}
+
+@media (max-width:640px){
+  .pd-foot{flex-direction:column;text-align:center}
+}
+
+/* Відступ під фіксовану шапку для контентних сторінок */
+.pd-page{padding-top:calc(var(--header-h) + var(--sp-4))}
+
+/* =========================================================
+   Інтерактив карток/секцій — темніше + легке стиснення,
+   з якорем трансформації в той бік, куди картка "впирається"
+   ========================================================= */
+.card, .section{
+  transition:transform var(--ease), box-shadow var(--ease);
+  transform-origin:center;
+  box-shadow:0 20px 40px -20px rgba(0,0,0,calc(.55 * var(--c-shadow-op)));
+}
+@media (hover:hover) and (pointer:fine){
+  .card:hover, .section:hover{transform:scale(.975); box-shadow:0 12px 28px -16px rgba(0,0,0,calc(.65 * var(--c-shadow-op)))}
+}
+.card:active, .section:active{transform:scale(.975)}
+
+.card.left, .section.edge-left  { transform-origin:left center; }
+.card.right, .section.edge-right{ transform-origin:right center; }
+.section.edge-top   { transform-origin:top center; }
+.section.edge-bottom{ transform-origin:bottom center; }

@@ -1,309 +1,710 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+<script>(function(){var t=localStorage.getItem("pd-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>pro DIM — Будинок</title>
+  <meta name="description" content="Специфікації та ціни на модульні будинки proDIM — домокомплект, під оздоблення, з оздобленням або під ключ.">
+  <link rel="canonical" href="https://prodim.chernihiv.ua/house.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="pro DIM — Будинок">
+  <meta property="og:description" content="Специфікації та ціни на модульні будинки proDIM — домокомплект, під оздоблення, з оздобленням або під ключ.">
+  <meta property="og:image" content="https://prodim.chernihiv.ua/logo.png">
+  <meta property="og:url" content="https://prodim.chernihiv.ua/house.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="icon" href="logo.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
 <link rel="stylesheet" href="house.css">
+<script src="i18n.js" defer></script>
+<script src="theme.js" defer></script>
 </head>
 <body>
 
-<input type="checkbox" id="nav-open" hidden>
+<input type="checkbox" id="pd-nav-toggle" hidden>
 
-<header>
-    <a href="index.html"><img src="logo.png" alt="pro DIM" class="logo"></a>
-    <label for="nav-open" class="burger" aria-label="Меню">
+  <header class="pd-header">
+    <div class="pd-header-left">
+    <a href="index.html" class="pd-logo"><img src="logo.png" alt="pro DIM"></a>
+    <button class="pd-back" onclick="history.back()" aria-label="Назад" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      <span data-en="Back">Назад</span>
+    </button>
+    </div>
+    <div class="pd-header-right">
+    <div class="pd-theme-toggle">
+      <span class="pd-theme-btn active" data-theme="dark" aria-label="Темна тема"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+      <span class="pd-theme-btn" data-theme="light" aria-label="Світла тема"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+    </div>
+    <div class="pd-lang-toggle">
+      <span class="pd-lang-btn" data-lang="uk">UA</span>
+      <span class="pd-lang-btn" data-lang="en">EN</span>
+    </div>
+    <label for="pd-nav-toggle" class="pd-burger" aria-label="Відкрити меню">
       <span></span><span></span><span></span>
     </label>
+  </div>
   </header>
 
-  <div class="overlay">
-    <label for="nav-open" class="overlay-bg"></label>
-    <nav>
-      <label for="nav-open" class="menu-back">
-        Назад
-      </label>
-      <a href="contact.html" class="nc" style="--bg:url('img/contact.png')">
-        <span>КОНТАКТИ</span>
-        <small>∧<br>Дізнатись більше</small>
-      </a>
-      <a href="about.html" class="nc" style="--bg:url('img/about.png')">
-        <span>ПРО НАС</span>
-        <small>∧<br>Дізнатись більше</small>
-      </a>
-      <a href="spec.html" class="nc" style="--bg:url('img/spec.png')">
-        <span>БАЗОВА<br>СПЕЦИФІКАЦІЯ<br>БУДИНКІВ</span>
-        <small>∧<br>Дізнатись більше</small>
-      </a>
+  <div class="pd-nav-overlay">
+    <label for="pd-nav-toggle" class="pd-nav-bg" aria-label="Закрити меню"></label>
+    <label for="pd-nav-toggle" class="pd-nav-close" aria-label="Закрити меню">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </label>
+    <nav class="pd-nav">
+        <a href="index.html" data-en="Home">Головна</a>
+        <a href="catalog.html" data-en="Catalog">Каталог</a>
+        <a href="about.html" data-en="About us">Про нас</a>
+        <a href="projects.html" data-en="Our Projects">Реалізовані проєкти</a>
+        <a href="offer.html" data-en="Commercial Offer">Комерційна пропозиція</a>
+        <a href="contact.html" data-en="Contact">Контакти</a>
     </nav>
   </div>
 
-<main id="main-content"></main>
 
- <footer>
+<main id="main-content" class="pd-page"></main>
+
+ <footer class="pd-footer">
     <hr>
-    <div class="foot">
+    <div class="pd-foot">
       <img src="logo.png" alt="pro DIM">
-      <div class="socials">
-        <strong>БУДЬ З НАМИ НА ЗВ'ЯЗКУ!</strong>
-        <div class="icons">
-          <a href="https://www.tiktok.com/@prodim_?_r=1&_t=ZS-94xQqrTevDO" aria-label="TikTok"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
-          <a href="https://www.facebook.com/share/18eHg71dXW/" aria-label="Facebook"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="viber://chat?number=%2B380684421138" aria-label="Viber"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M11.4 2C6.27 2 2.5 5.28 2.5 9.64c0 2.44 1.15 4.64 3.04 6.09v3.27l2.97-1.63c.58.16 1.2.24 1.84.24h.05c5.13 0 8.9-3.28 8.9-7.64S16.53 2 11.4 2zm1 10.48l-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.91-2.72-5.47 5.82z"/></svg></a>
-          <a href="https://t.me/makarenko93yuliia" aria-label="Telegram"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
-          <a href="https://www.instagram.com/_prodim_?igsh=MWplN2h5b3N5bXp5aQ==" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></a>
+      <div class="pd-socials">
+        <strong data-en="STAY IN TOUCH WITH US!">БУДЬ З НАМИ НА ЗВ'ЯЗКУ!</strong>
+        <div class="pd-icons">
+          <a href="https://www.tiktok.com/@prodim_?_r=1&_t=ZS-94xQqrTevDO" aria-label="TikTok"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
+          <a href="https://www.facebook.com/share/18eHg71dXW/" aria-label="Facebook"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="viber://chat?number=%2B380684421138" aria-label="Viber"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 2C6.27 2 2.5 5.28 2.5 9.64c0 2.44 1.15 4.64 3.04 6.09v3.27l2.97-1.63c.58.16 1.2.24 1.84.24h.05c5.13 0 8.9-3.28 8.9-7.64S16.53 2 11.4 2zm1 10.48l-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.91-2.72-5.47 5.82z"/></svg></a>
+          <a href="https://t.me/makarenko93yuliia" aria-label="Telegram"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          <a href="https://www.instagram.com/_prodim_?igsh=MWplN2h5b3N5bXp5aQ==" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         </div>
       </div>
-      <div class="phone">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.5 19.79 19.79 0 01.34 2.84 2 2 0 012.33 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-.77a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <strong><a href="tel:+380684421137" class="phone-n">+380684421137</a></strong>
+      <div class="pd-phone">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.5 19.79 19.79 0 01.34 2.84 2 2 0 012.33 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-.77a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <strong><a href="tel:+380684421137" class="pd-phone-n">+380684421137</a></strong>
       </div>
     </div>
   </footer>
 
 <script>
+const SHARED_TABLE_1 = {
+  title: "Конструкція будинку", titleEn: "House construction",
+  headers: ["Характеристика","Під оздоблення","З оздобленням","Під ключ"],
+  headersEn: ["Feature","Ready for finishing","Finished","Turnkey"],
+  rows: [
+    {name:"Каркас будівлі", nameEn:"Building frame",
+     desc:"Цільна стругана сосна 1 ґатунку, оброблена вогнебіозахистом; гідроізоляція; мінераловатний утеплювач; пароізоляція.",
+     descEn:"Solid planed grade-1 pine, fire- and bio-protection treated; waterproofing; mineral wool insulation; vapor barrier.",
+     vals:["+","+","+"]},
+    {name:"Дах", nameEn:"Roof",
+     desc:"Фальцьнастил; гідроізоляційна мембрана; зовнішня обрешітка; мінераловатний утеплювач; пароізоляція.",
+     descEn:"Standing-seam roofing; waterproofing membrane; exterior battens; mineral wool insulation; vapor barrier.",
+     vals:["+","+","+"]},
+    {name:"Внутрішня обрешітка", nameEn:"Interior battens",
+     desc:"Обрешітка внутрішньої площини стін відповідно до проєкту.",
+     descEn:"Battens across the interior wall surface per the design.",
+     vals:["+","+","+"]},
+    {name:"Обрешітка стелі", nameEn:"Ceiling battens",
+     desc:"Основа під подальше оздоблення стелі відповідно до проєкту.",
+     descEn:"Base for further ceiling finishing per the design.",
+     vals:["+","+","+"]},
+    {name:"Фасад", nameEn:"Facade",
+     desc:"Планкен, оброблений фарбою; фальцнастил; обрешітка.",
+     descEn:"Painted plank cladding; standing-seam trim; battens.",
+     vals:["+","+","+"]},
+    {name:"Основа підлоги", nameEn:"Floor base",
+     desc:"Металева сітка від гризунів; гідроізоляційна мембрана; мінераловатний утеплювач; ОСБ 27 мм; пароізоляція.",
+     descEn:"Metal rodent mesh; waterproofing membrane; mineral wool insulation; 27mm OSB; vapor barrier.",
+     vals:["+","+","+"]},
+  ]
+};
+
+const SHARED_TABLE_2 = {
+  title: "Оздоблення, інженерія та монтаж", titleEn: "Finishing, engineering and installation",
+  headers: ["Характеристика","Під оздоблення","З оздобленням","Під ключ"],
+  headersEn: ["Feature","Ready for finishing","Finished","Turnkey"],
+  rows: [
+    {name:"Лінолеум", nameEn:"Linoleum",
+     desc:"Чистове підлогове покриття.", descEn:"Finish flooring.",
+     vals:["−","+","+"]},
+    {name:"Внутрішні стіни", nameEn:"Interior walls",
+     desc:"Натуральна шліфована дерев'яна вагонка із сосни 1 ґатунку, оброблена фарбою.",
+     descEn:"Natural sanded grade-1 pine paneling, painted.",
+     vals:["−","+","+"]},
+    {name:"Міжкімнатні двері", nameEn:"Interior doors",
+     desc:"Дерев'яні; розмір і кількість — згідно з планом.",
+     descEn:"Wooden; size and quantity per the floor plan.",
+     vals:["−","+","+"]},
+    {name:"Вікна та зовнішні двері", nameEn:"Windows and exterior doors",
+     desc:"Металопластикові, з однобічною ламінацією.",
+     descEn:"PVC, single-side laminated.",
+     vals:["+","+","+"]},
+    {name:"Ванна кімната — підготовка", nameEn:"Bathroom — preparation",
+     desc:"Стіни — вологостійкий гіпсокартон під плитку; стеля — дерев'яна вагонка; підлога — ОСБ + ЦСП; комунікації водопостачання та водовідведення по будинку.",
+     descEn:"Walls — moisture-resistant drywall for tiling; ceiling — wood paneling; floor — OSB + cement board; water supply and drainage routed through the house.",
+     vals:["−","+","+"]},
+    {name:"Ванна кімната — обладнання", nameEn:"Bathroom — fixtures",
+     desc:"Керамограніт на підлозі та стінах; унітаз-компакт Cersanit; підлогова тумба з раковиною стандарт; душовий бокс стандарт; змішувачі; нагрівальний провід для води.",
+     descEn:"Porcelain tile on floor and walls; Cersanit compact toilet; standard vanity with sink; standard shower enclosure; mixer taps; water heating cable.",
+     vals:["−","−","+"]},
+    {name:"Вентиляція", nameEn:"Ventilation",
+     desc:"Рекуператори — у кожній спальні та кухні-вітальні згідно з планом; примусова вентиляція у ванній кімнаті.",
+     descEn:"Heat-recovery units in every bedroom and the kitchen-living room per the plan; forced ventilation in the bathroom.",
+     vals:["−","+","+"]},
+    {name:"Електрика", nameEn:"Electrical",
+     desc:"Розподільний щиток і комплектуючі Hager; мідна проводка; розетки та вимикачі Lezard; LED-лампочки.",
+     descEn:"Hager distribution panel and components; copper wiring; Lezard outlets and switches; LED bulbs.",
+     vals:["−","+","+"]},
+    {name:"Монтаж будинку", nameEn:"House assembly",
+     desc:"З'єднання та монтаж модулів на підготовленому фундаменті.",
+     descEn:"Joining and installing the modules on the prepared foundation.",
+     vals:["+","+","+"]},
+    {name:"Тераса за планом", nameEn:"Terrace per plan",
+     desc:"Дошка та каркас тераси — сосна камерної сушки.",
+     descEn:"Decking boards and terrace frame — kiln-dried pine.",
+     vals:["+","+","+"]},
+    {name:"Завантаження", nameEn:"Loading",
+     desc:"Завантаження будинку на автомобіль перевізника.",
+     descEn:"Loading the house onto the carrier's truck.",
+     vals:["+","+","+"]},
+  ]
+};
+
+/* ── Сторінка 32: що можна змінити / що не входить / зверніть увагу (спільне для всіх) ── */
+const CHANGE_INFO = {
+  optionsTitle:"Додаткові опції", optionsTitleEn:"Additional options",
+  options:[
+    "Утеплення 100, 150, 200 або 250 мм",
+    "Опалення, тепла підлога, кондиціонери",
+    "«Розумний будинок», пожежна й охоронна сигналізація",
+    "Більша тераса, сходи, перила та відливи",
+    "Закладні для навісної техніки й меблів",
+    "Заміна матеріалів, покриття, обладнання або техніки"
+  ],
+  optionsEn:[
+    "100, 150, 200 or 250mm insulation",
+    "Heating, underfloor heating, air conditioning",
+    "Smart-home, fire and security alarm systems",
+    "A larger terrace, stairs, railings and drip caps",
+    "Embedded fixings for mounted equipment and furniture",
+    "Substituting materials, finishes, equipment or appliances"
+  ],
+  notIncludedTitle:"У вартість не входить", notIncludedTitleEn:"Not included in the price",
+  notIncluded:[
+    "Доставка будинку до земельної ділянки",
+    "Розвантаження та кранові роботи",
+    "Облаштування фундаменту",
+    "Підведення зовнішніх комунікацій",
+    "Благоустрій ділянки, якщо він окремо не погоджений"
+  ],
+  notIncludedEn:[
+    "Delivering the house to the plot",
+    "Unloading and crane work",
+    "Foundation works",
+    "Bringing utilities to the site",
+    "Landscaping, unless separately agreed"
+  ],
+  attentionTitle:"Зверніть увагу", attentionTitleEn:"Please note",
+  attentionText:"Тип фундаменту визначається з урахуванням конструкції будинку, земельної ділянки та характеристик ґрунту. Кінцеву вартість фіксуємо після розробки проєкту, актуалізації цін та погодження специфікації.",
+  attentionTextEn:"The foundation type is determined based on the house design, the plot, and soil characteristics. The final price is fixed after the design is developed, prices are updated, and the specification is agreed.",
+  turnkeyTitle:"Комплектація «під ключ»", turnkeyTitleEn:"\u201cTurnkey\u201d package",
+  turnkeyText:"Закладні для меблів, техніки та інших конструкцій, які встановлює proDIM, включаємо у вартість.",
+  turnkeyTextEn:"We include in the price the embedded fixings for furniture, appliances and other fittings that proDIM installs."
+};
+
+const SHARED_NOTICE = [
+  "Ми розуміємо, що ідеальний дім складається з деталей, важливих саме для вас. Тому викладена специфікація є базовою і може бути повністю адаптована під ваші індивідуальні запити. Будь-які зміни в матеріалах або додавання нових опцій можливі за погодженням та розраховуються додатково.",
+  "<strong>Зверніть увагу!</strong> Вартість діюча на момент подачі пропозиції і уточнюється в день оплати. Кінцева вартість за пропозицією визначається після розробки проектної документації, візуалізації та погодження специфікацій."
+];
+const SHARED_NOTICE_EN = [
+  "We understand that a perfect home is made of details that matter to you specifically. So this specification is a baseline and can be fully adapted to your individual requests. Any changes to materials or added options are possible by agreement and are calculated separately.",
+  "<strong>Please note!</strong> Pricing is valid at the time the offer is issued and is confirmed on the day of payment. The final price is determined after the design documentation, visualization and specification are agreed upon."
+];
+const SHARED_THANKS = "Дякуємо, що розглянули нашу пропозицію\nЗалюбки, втілимо вашу мрію в життя";
+const SHARED_THANKS_EN = "Thank you for reviewing our offer\nWe'd love to bring your dream to life";
+
 const DATA = {
   house61: {
-    title: "Будинок з терасою",
-    subtitle: "61,98 метри квадратні",
+    title: "Будинок з терасою", subtitle: "61,98 метри квадратні",
+    titleEn: "House with a terrace", subtitleEn: "61.98 m\u00b2",
     media: ["img/spec-61.png"],
-    table: {
-      headers: ["Характеристика","Домокомплект","Під оздоблення","З оздобленням","Під ключ"],
-      rows: [
-        {name:"Каркас будівлі",desc:"Дерев'яний каркас: шліфована строгана сосна 1 ґатунку, обробка вогнебіозахистом. Гідроізоляція. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Дах",desc:"Фальцьначист. Гідроізоляційна мембрана. Обрешітка зовнішня. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Фасад",desc:"Стіни план'яні оброблені фарбою. Фальцьначист. Обрешітка.",vals:["−","Обрешітка стін","+","+"]},
-        {name:"Підлога",desc:"Металева стяж підструктура. Гідроізоляційна мембрана. Утеплювач мінераловатний 100 мм. ОСБ 22мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Ламінат",vals:["−","−","+","+"]},
-        {name:"Внутрішні стіни",desc:"Вагонка натуральна дерев'яна шліфована, сосна 1 ґатунку оброблена фарбою.",vals:["+","+","+","+"]},
-        {name:"Двері та вікна",desc:"Міжкімнатні 700*2050 мм дерев'яні – 2 шт.",vals:["−","+","+","+"]},
-        {name:"",desc:"Металопластикові вікна та двері, однобічна ламінація.",vals:["+","+","+","+"]},
-        {name:"Ванна кімната",desc:"Стіни та підлога – вологостійкий гіпсокартон під плитку. Стіна – дерев'яна штогна. Підлога – ОСБ+ЦСП. Комунікації до будинку (підключитися та водовідведення).",vals:["+","+","+","+"]},
-        {name:"Плитка на підлогу та стіни мерінджі-рані",desc:"Унітаз комплект Geberit. Душовий бокс Standart. Труба підлогова з розведенням Standart. Змішувач. Нагрівальний провід для води.",vals:["−","−","−","+"]},
-        {name:"Вентиляція",desc:"Рекуператори 2шт. Принусова вентиляція у ванну кімнату.",vals:["−","−","+","+"]},
-        {name:"Електрика",desc:"Розподільний щиток та комплектуючі Hager. Мідна проводка. Розетки (до 10шт.) та вимикачі (до 6шт.) Legrand. Led-ламочки (до 10шт.).",vals:["+","+","+","+"]},
-        {name:"Монтаж будинку",vals:["−","+","+","+"]},
-        {name:"Завантаження будинку на автомобіль перевізника",vals:["+","+","+","+"]},
-        {name:"Вартість",vals:["709 439,00","799 252,00","1 124 427,00","1 290 401,00"],price:true}
-      ]
-    },
+    price: ["799 252,00","1 124 427,00","1 290 401,00"],
     extraText: [
-      {type:"h3",text:"Додаткові опції:"},
-      {type:"ul",items:["Утеплення 150 мм – 172 255,00 грн","Утеплення 200 мм – 344 511,00 грн"]},
-      {type:"h3",text:"У вартість не входить:"},
-      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 79 500,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"]},
+      {type:"h3",text:"Додаткові опції:",textEn:"Additional options:"},
+      {type:"ul",items:["Утеплення 150 мм – 172 255,00 грн","Утеплення 200 мм – 344 511,00 грн"],
+       itemsEn:["150mm insulation \u2014 UAH 172,255.00","200mm insulation \u2014 UAH 344,511.00"]},
+      {type:"h3",text:"У вартість не входить:",textEn:"Not included in the price:"},
+      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 79 500,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"],
+       itemsEn:["Unloading the house","Foundation (steel piles/concrete-filled pipes, geotextile, gravel, concreting) \u2014 estimated cost UAH 79,500.00","Terrace (decking boards, kiln-dried pine / terrace foundation; terrace frame \u2014 kiln-dried pine)"]},
     ],
     extraImg: "img/spec-61(2).png",
-    notice: [
-      "Ми розуміємо, що ідеальний дім складається з деталей, важливих саме для вас. Тому викладена специфікація є базовою і може бути повністю адаптована під ваші індивідуальні запити. Будь-які зміни в матеріалах або додавання нових опцій можливі за погодженням та розраховуються додатково.",
-      "<strong>Зверніть увагу!</strong> Вартість діюча на момент подачі пропозиції і уточнюється в день оплати. Кінцева вартість за пропозицією визначається після розробки проектної документації, візуалізації та погодження специфікацій."
-    ],
-    thanks: "Дякуємо, що розглянули нашу пропозицію\nЗалюбки, втілимо вашу мрію в життя"
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
   },
   house29: {
-    title: "Будинок з одного модуля",
-    subtitle: "29,75 метри квадратні",
+    title: "Будинок з одного модуля", subtitle: "29,75 метри квадратні",
+    titleEn: "Single-module house", subtitleEn: "29.75 m\u00b2",
     media: ["img/spec-29.png"],
-    table: {
-      headers: ["Характеристика","Домокомплект","Під оздоблення","З оздобленням","Під ключ"],
-      rows: [
-        {name:"Каркас будівлі",desc:"Дерев'яний каркас: шліфована строгана сосна 1 ґатунку, обробка вогнебіозахистом. Гідроізоляція. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Дах",desc:"Фальцьначист. Гідроізоляційна мембрана. Обрешітка зовнішня. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Фасад",desc:"Стіни план'яні оброблені фарбою. Фальцьначист. Обрешітка.",vals:["−","Обрешітка стін","+","+"]},
-        {name:"Підлога",desc:"Металева стяж підструктура. Гідроізоляційна мембрана. Утеплювач мінераловатний 100 мм. ОСБ 22мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Ламінат",vals:["−","−","+","+"]},
-        {name:"Внутрішні стіни",desc:"Вагонка натуральна дерев'яна шліфована, сосна 1 ґатунку оброблена фарбою.",vals:["+","+","+","+"]},
-        {name:"Двері та вікна",desc:"Міжкімнатні 700*2050 мм дерев'яні – 2 шт.",vals:["−","+","+","+"]},
-        {name:"",desc:"Металопластикові вікна та двері, однобічна ламінація.",vals:["+","+","+","+"]},
-        {name:"Ванна кімната",desc:"Стіни та підлога – вологостійкий гіпсокартон під плитку. Стіна – дерев'яна штогна. Підлога – ОСБ+ЦСП. Комунікації до будинку (підключитися та водовідведення).",vals:["+","+","+","+"]},
-        {name:"Плитка на підлогу та стіни мерінджі-рані",desc:"Унітаз комплект Geberit. Душовий бокс Standart. Труба підлогова з розведенням Standart. Змішувач. Нагрівальний провід для води.",vals:["−","−","−","+"]},
-        {name:"Вентиляція",desc:"Рекуператори 2шт. Принусова вентиляція у ванну кімнату.",vals:["−","−","+","+"]},
-        {name:"Електрика",desc:"Розподільний щиток та комплектуючі Hager. Мідна проводка. Розетки (до 10шт.) та вимикачі (до 6шт.) Legrand. Led-ламочки (до 10шт.).",vals:["+","+","+","+"]},
-        {name:"Монтаж будинку",vals:["−","+","+","+"]},
-        {name:"Завантаження будинку на автомобіль перевізника",vals:["+","+","+","+"]},
-        {name:"Вартість",vals:["398 900,00","449 400,00","632 238,00","725 561,00"],price:true}
-      ]
-    },
+    price: ["449 400,00","632 238,00","725 561,00"],
     extraText: [
-      {type:"h3",text:"Додаткові опції:"},
-      {type:"ul",items:["Утеплення 150 мм – 96 855,00 грн","Утеплення 200 мм – 193 710,00 грн"]},
-      {type:"h3",text:"У вартість не входить:"},
-      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 44 625,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"]},
+      {type:"h3",text:"Додаткові опції:",textEn:"Additional options:"},
+      {type:"ul",items:["Утеплення 150 мм – 96 855,00 грн","Утеплення 200 мм – 193 710,00 грн"],
+       itemsEn:["150mm insulation \u2014 UAH 96,855.00","200mm insulation \u2014 UAH 193,710.00"]},
+      {type:"h3",text:"У вартість не входить:",textEn:"Not included in the price:"},
+      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 44 625,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"],
+       itemsEn:["Unloading the house","Foundation (steel piles/concrete-filled pipes, geotextile, gravel, concreting) \u2014 estimated cost UAH 44,625.00","Terrace (decking boards, kiln-dried pine / terrace foundation; terrace frame \u2014 kiln-dried pine)"]},
     ],
-    extraImg: "img/spec-29(2).png",
-    notice: [
-      "Ми розуміємо, що ідеальний дім складається з деталей, важливих саме для вас. Тому викладена специфікація є базовою і може бути повністю адаптована під ваші індивідуальні запити. Будь-які зміни в матеріалах або додавання нових опцій можливі за погодженням та розраховуються додатково.",
-      "<strong>Зверніть увагу!</strong> Вартість діюча на момент подачі пропозиції і уточнюється в день оплати. Кінцева вартість за пропозицією визначається після розробки проектної документації, візуалізації та погодження специфікацій."
-    ],
-    thanks: "Дякуємо, що розглянули нашу пропозицію\nЗалюбки, втілимо вашу мрію в життя"
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
   },
   house24: {
-    title: "Будинок з одного модуля",
-    subtitle: "24 метри квадратні",
+    title: "Будинок з одного модуля", subtitle: "24 метри квадратні",
+    titleEn: "Single-module house", subtitleEn: "24 m\u00b2",
     media: ["img/spec-24.png"],
-    table: {
-      headers: ["Характеристика","Домокомплект","Під оздоблення","З оздобленням","Під ключ"],
-      rows: [
-        {name:"Каркас будівлі",desc:"Дерев'яний каркас: шліфована строгана сосна 1 ґатунку, обробка вогнебіозахистом. Гідроізоляція. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Дах",desc:"Фальцьначист. Гідроізоляційна мембрана. Обрешітка зовнішня. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Фасад",desc:"Стіни план'яні оброблені фарбою. Фальцьначист. Обрешітка.",vals:["−","Обрешітка стін","+","+"]},
-        {name:"Підлога",desc:"Металева стяж підструктура. Гідроізоляційна мембрана. Утеплювач мінераловатний 100 мм. ОСБ 22мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Ламінат",vals:["−","−","+","+"]},
-        {name:"Внутрішні стіни",desc:"Вагонка натуральна дерев'яна шліфована, сосна 1 ґатунку оброблена фарбою.",vals:["+","+","+","+"]},
-        {name:"Двері та вікна",desc:"Міжкімнатні 700*2050 мм дерев'яні – 2 шт.",vals:["−","+","+","+"]},
-        {name:"",desc:"Металопластикові вікна та двері, однобічна ламінація.",vals:["+","+","+","+"]},
-        {name:"Ванна кімната",desc:"Стіни та підлога – вологостійкий гіпсокартон під плитку. Стіна – дерев'яна штогна. Підлога – ОСБ+ЦСП. Комунікації до будинку (підключитися та водовідведення).",vals:["+","+","+","+"]},
-        {name:"Плитка на підлогу та стіни мерінджі-рані",desc:"Унітаз комплект Geberit. Душовий бокс Standart. Труба підлогова з розведенням Standart. Змішувач. Нагрівальний провід для води.",vals:["−","−","−","+"]},
-        {name:"Вентиляція",desc:"Рекуператори 2шт. Принусова вентиляція у ванну кімнату.",vals:["−","−","+","+"]},
-        {name:"Електрика",desc:"Розподільний щиток та комплектуючі Hager. Мідна проводка. Розетки (до 10шт.) та вимикачі (до 6шт.) Legrand. Led-ламочки (до 10шт.).",vals:["+","+","+","+"]},
-        {name:"Монтаж будинку",vals:["−","+","+","+"]},
-        {name:"Завантаження будинку на автомобіль перевізника",vals:["+","+","+","+"]},
-        {name:"Вартість",vals:["321 802,00","362 541,00","510 041,00","585 327,00"],price:true}
-      ]
-    },
+    price: ["362 541,00","510 041,00","585 327,00"],
     extraText: [
-      {type:"h3",text:"Додаткові опції:"},
-      {type:"ul",items:["Утеплення 150 мм – 78 135,00 грн","Утеплення 200 мм – 156 270,00 грн"]},
-      {type:"h3",text:"У вартість не входить:"},
-      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 36 000,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"]},
+      {type:"h3",text:"Додаткові опції:",textEn:"Additional options:"},
+      {type:"ul",items:["Утеплення 150 мм – 78 135,00 грн","Утеплення 200 мм – 156 270,00 грн"],
+       itemsEn:["150mm insulation \u2014 UAH 78,135.00","200mm insulation \u2014 UAH 156,270.00"]},
+      {type:"h3",text:"У вартість не входить:",textEn:"Not included in the price:"},
+      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 36 000,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"],
+       itemsEn:["Unloading the house","Foundation (steel piles/concrete-filled pipes, geotextile, gravel, concreting) \u2014 estimated cost UAH 36,000.00","Terrace (decking boards, kiln-dried pine / terrace foundation; terrace frame \u2014 kiln-dried pine)"]},
     ],
-    notice: [
-      "Ми розуміємо, що ідеальний дім складається з деталей, важливих саме для вас. Тому викладена специфікація є базовою і може бути повністю адаптована під ваші індивідуальні запити. Будь-які зміни в матеріалах або додавання нових опцій можливі за погодженням та розраховуються додатково.",
-      "<strong>Зверніть увагу!</strong> Вартість діюча на момент подачі пропозиції і уточнюється в день оплати. Кінцева вартість за пропозицією визначається після розробки проектної документації, візуалізації та погодження специфікацій."
-    ],
-    thanks: "Дякуємо, що розглянули нашу пропозицію\nЗалюбки, втілимо вашу мрію в життя"
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
   },
   house84: {
-    title: "Будинок з терасою",
-    subtitle: "84,83 метри квадратні",
+    title: "Будинок з терасою", subtitle: "84,83 метри квадратні",
+    titleEn: "House with a terrace", subtitleEn: "84.83 m\u00b2",
     media: ["img/spec-84.png"],
-    table: {
-      headers: ["Характеристика","Домокомплект","Під оздоблення","З оздобленням","Під ключ"],
-      rows: [
-        {name:"Каркас будівлі",desc:"Дерев'яний каркас: шліфована строгана сосна 1 ґатунку, обробка вогнебіозахистом. Гідроізоляція. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Дах",desc:"Фальцьначист. Гідроізоляційна мембрана. Обрешітка зовнішня. Утеплювач мінераловатний 100 мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Фасад",desc:"Стіни план'яні оброблені фарбою. Фальцьначист. Обрешітка.",vals:["−","Обрешітка стін","+","+"]},
-        {name:"Підлога",desc:"Металева стяж підструктура. Гідроізоляційна мембрана. Утеплювач мінераловатний 100 мм. ОСБ 22мм. Пароізоляція.",vals:["+","+","+","+"]},
-        {name:"Ламінат",vals:["−","−","+","+"]},
-        {name:"Внутрішні стіни",desc:"Вагонка натуральна дерев'яна шліфована, сосна 1 ґатунку оброблена фарбою.",vals:["+","+","+","+"]},
-        {name:"Двері та вікна",desc:"Міжкімнатні 900*2050 мм дерев'яні – 2 шт.",vals:["−","+","+","+"]},
-        {name:"",desc:"Металопластикові вікна та двері, однобічна ламінація.",vals:["+","+","+","+"]},
-        {name:"Ванна кімната",desc:"Стіни та підлога – вологостійкий гіпсокартон під плитку. Стіна – дерев'яна штогна. Підлога – ОСБ+ЦСП. Комунікації до будинку (підключитися та водовідведення).",vals:["+","+","+","+"]},
-        {name:"Плитка на підлогу та стіни мерінджі-рані",desc:"Унітаз комплект Geberit. Душовий бокс Standart. Труба підлогова з розведенням Standart. Змішувач. Нагрівальний провід для води.",vals:["−","−","−","+"]},
-        {name:"Вентиляція",desc:"Рекуператори 2шт. Принусова вентиляція у ванну кімнату.",vals:["−","−","+","+"]},
-        {name:"Електрика",desc:"Розподільний щиток та комплектуючі Hager. Мідна проводка. Розетки (до 10шт.) та вимикачі (до 6шт.) Legrand. Led-ламочки (до 10шт.).",vals:["+","+","+","+"]},
-        {name:"Монтаж будинку",vals:["−","+","+","+"]},
-        {name:"Завантаження будинку на автомобіль перевізника",vals:["+","+","+","+"]},
-        {name:"Вартість",vals:["972 618,00","1 095 750,00","1 541 550,00","1 829 098,00"],price:true}
-      ]
-    },
+    price: ["1 095 750,00","1 541 550,00","1 829 098,00"],
     extraText: [
-      {type:"h3",text:"Додаткові опції:"},
-      {type:"ul",items:["Утеплення 150 мм – 236 200,00 грн","Утеплення 200 мм –  472 300,00 грн"]},
-      {type:"h3",text:"У вартість не входить:"},
-      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 109 500,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"]},
+      {type:"h3",text:"Додаткові опції:",textEn:"Additional options:"},
+      {type:"ul",items:["Утеплення 150 мм – 236 200,00 грн","Утеплення 200 мм – 472 300,00 грн"],
+       itemsEn:["150mm insulation \u2014 UAH 236,200.00","200mm insulation \u2014 UAH 472,300.00"]},
+      {type:"h3",text:"У вартість не входить:",textEn:"Not included in the price:"},
+      {type:"ul",items:["Розвантаження будинку","Фундамент (Металеві паль/бетоновані труби, геотекстиль, щебінь, бетонування) – орієнтовна вартість 109 500,00 грн","Тераса (Терасна дошка, сосна камерної сушки/фундамент під терасу; каркас тераси – сосна камерної сушки)"],
+       itemsEn:["Unloading the house","Foundation (steel piles/concrete-filled pipes, geotextile, gravel, concreting) \u2014 estimated cost UAH 109,500.00","Terrace (decking boards, kiln-dried pine / terrace foundation; terrace frame \u2014 kiln-dried pine)"]},
     ],
     extraImg: "img/spec-84(2).png",
-    notice: [
-      "Ми розуміємо, що ідеальний дім складається з деталей, важливих саме для вас. Тому викладена специфікація є базовою і може бути повністю адаптована під ваші індивідуальні запити. Будь-які зміни в матеріалах або додавання нових опцій можливі за погодженням та розраховуються додатково.",
-      "<strong>Зверніть увагу!</strong> Вартість діюча на момент подачі пропозиції і уточнюється в день оплати. Кінцева вартість за пропозицією визначається після розробки проектної документації, візуалізації та погодження специфікацій."
-    ],
-    thanks: "Дякуємо, що розглянули нашу пропозицію\nЗалюбки, втілимо вашу мрію в життя"
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+
+  /* ===== 8 нових моделей — з каталогу proDIM 2026 ===== */
+  mini: {
+    title:"МІНІ", subtitle:"22,40 метри квадратні", titleEn:"MINI", subtitleEn:"22.40 m\u00b2",
+    tagline:"Мінімум площі — усе необхідне для проживання",
+    taglineEn:"Minimal footprint — everything you need to live",
+    description:"Найкомпактніший будинок у каталозі. Підійде для дачі, гостьового проживання, орендного бізнесу або першого власного простору.",
+    descriptionEn:"The most compact house in the catalog. Great for a country house, guest stays, rental business, or your first own space.",
+    dims:"7,00 × 3,20 м", dimsEn:"7.00 \u00d7 3.20 m", terrace:"немає", terraceEn:"none", bedrooms:"студія", bedroomsEn:"studio",
+    rooms:"Житлова зона - 15,33 м²; санвузол - 2,63 м².",
+    roomsEn:"Living area \u2014 15.33 m\u00b2; bathroom \u2014 2.63 m\u00b2.",
+    advantages:"Один модуль; швидкий монтаж; зручний формат для невеликої ділянки.",
+    advantagesEn:"One module; fast installation; a convenient format for a small plot.",
+    insulation:"150 мм", insulationEn:"150 mm",
+    media:["img/models/mini-cover.jpg"],
+    blueprint: "img/models/mini-blueprint.jpg",
+    price:["497 816,00","753 762,00","873 555,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  ruta: {
+    title:"РУТА", subtitle:"32,20 метри квадратні", titleEn:"RUTA", subtitleEn:"32.20 m\u00b2",
+    tagline:"Окрема спальня у компактному форматі",
+    taglineEn:"A separate bedroom in a compact format",
+    description:"Практичний будинок для однієї людини або пари. Є окрема спальня, кухня-вітальня, санвузол і невеликий передпокій.",
+    descriptionEn:"A practical house for one person or a couple. Features a separate bedroom, kitchen-living room, bathroom and a small entryway.",
+    dims:"3,30 × 9,02 м", dimsEn:"3.30 \u00d7 9.02 m", terrace:"немає", terraceEn:"none", bedrooms:"1", bedroomsEn:"1",
+    rooms:"Спальня - 7,08 м²; кухня-вітальня - 11,37 м²; санвузол - 2,73 м²; передпокій - 2,17 м².",
+    roomsEn:"Bedroom \u2014 7.08 m\u00b2; kitchen-living room \u2014 11.37 m\u00b2; bathroom \u2014 2.73 m\u00b2; entryway \u2014 2.17 m\u00b2.",
+    advantages:"Один модуль; окрема спальня; повноцінна кухня-вітальня.",
+    advantagesEn:"One module; a separate bedroom; a full kitchen-living room.",
+    insulation:"стіни 150 мм; дах і підлога 200 мм", insulationEn:"walls 150 mm; roof and floor 200 mm",
+    media:["img/models/ruta-cover.jpg"],
+    blueprint: "img/models/ruta-blueprint.jpg",
+    price:["667 903,00","1 011 297,00","1 142 978,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  lishchyna: {
+    title:"ЛІЩИНА", subtitle:"36,05 метри квадратні", titleEn:"LISHCHYNA", subtitleEn:"36.05 m\u00b2",
+    tagline:"Одна спальня та простора відкрита тераса",
+    taglineEn:"One bedroom and a spacious open terrace",
+    description:"Компактний будинок для відпочинку, орендного бізнесу або проживання пари. Велика тераса продовжує кухню-вітальню.",
+    descriptionEn:"A compact house for a getaway, rental business, or a couple. A large terrace extends the kitchen-living room.",
+    dims:"6,65 × 7,60 м", dimsEn:"6.65 \u00d7 7.60 m", terrace:"16,51 м²", terraceEn:"16.51 m\u00b2", bedrooms:"1", bedroomsEn:"1",
+    rooms:"Спальня - 9,00 м²; кухня-вітальня - 13,70 м²; санвузол - 4,32 м²; тераса - 16,51 м².",
+    roomsEn:"Bedroom \u2014 9.00 m\u00b2; kitchen-living room \u2014 13.70 m\u00b2; bathroom \u2014 4.32 m\u00b2; terrace \u2014 16.51 m\u00b2.",
+    advantages:"Велика тераса; окрема спальня; зручний формат для бази відпочинку.",
+    advantagesEn:"A large terrace; a separate bedroom; a convenient format for a rental retreat.",
+    insulation:"150 мм", insulationEn:"150 mm",
+    media:["img/models/lishchyna-cover.jpg"],
+    blueprint: "img/models/lishchyna-blueprint.jpg",
+    extraImg:"img/models/lishchyna-realized.jpg",
+    gallery: ["img/models/lishchyna-detail-tl.jpg","img/models/lishchyna-detail-tr.jpg","img/models/lishchyna-detail-bl.jpg","img/models/lishchyna-detail-br.jpg"],
+    price:["846 821,00","1 231 273,00","1 368 535,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  verba: {
+    title:"ВЕРБА", subtitle:"42,84 метри квадратні", titleEn:"VERBA", subtitleEn:"42.84 m\u00b2",
+    tagline:"Простора кухня-вітальня та велика тераса",
+    taglineEn:"A spacious kitchen-living room and a large terrace",
+    description:"Збалансований проєкт з окремою спальнею, просторою кухнею-вітальнею та великою терасою для щоденного відпочинку.",
+    descriptionEn:"A balanced design with a separate bedroom, a spacious kitchen-living room, and a large terrace for everyday relaxation.",
+    dims:"7,30 × 8,06 м", dimsEn:"7.30 \u00d7 8.06 m", terrace:"18,12 м²", terraceEn:"18.12 m\u00b2", bedrooms:"1", bedroomsEn:"1",
+    rooms:"Спальня - 11,47 м²; кухня-вітальня - 16,69 м²; санвузол - 4,80 м²; тераса - 18,12 м².",
+    roomsEn:"Bedroom \u2014 11.47 m\u00b2; kitchen-living room \u2014 16.69 m\u00b2; bathroom \u2014 4.80 m\u00b2; terrace \u2014 18.12 m\u00b2.",
+    advantages:"Простора спальня; велика тераса; комфортний сімейний формат.",
+    advantagesEn:"A spacious bedroom; a large terrace; a comfortable family format.",
+    insulation:"150 мм", insulationEn:"150 mm",
+    media:["img/models/verba-cover.jpg"],
+    blueprint: "img/models/verba-blueprint.jpg",
+    extraImg:"img/models/verba-realized.jpg",
+    gallery: ["img/models/verba-detail-top.jpg","img/models/verba-detail-bottom.jpg"],
+    price:["997 322,00","1 454 185,00","1 601 290,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  cheremsha: {
+    title:"ЧЕРЕМША", subtitle:"52,91 метри квадратні", titleEn:"CHEREMSHA", subtitleEn:"52.91 m\u00b2",
+    tagline:"Дві спальні, комора та тераса",
+    taglineEn:"Two bedrooms, a storage room and a terrace",
+    description:"Компактний сімейний будинок із двома окремими спальнями. Комора доповнює планування, а тераса поєднує кухню-вітальню з подвір'ям.",
+    descriptionEn:"A compact family house with two separate bedrooms. A storage room rounds out the layout, and a terrace connects the kitchen-living room to the yard.",
+    dims:"5,68 × 10,24 м", dimsEn:"5.68 \u00d7 10.24 m", terrace:"9,07 м²", terraceEn:"9.07 m\u00b2", bedrooms:"2", bedroomsEn:"2",
+    rooms:"Спальні - 8,12 і 9,64 м²; кухня-вітальня - 15,86 м²; санвузол - 3,62 м²; комора - 1,65 м²; тераса - 9,07 м².",
+    roomsEn:"Bedrooms \u2014 8.12 and 9.64 m\u00b2; kitchen-living room \u2014 15.86 m\u00b2; bathroom \u2014 3.62 m\u00b2; storage room \u2014 1.65 m\u00b2; terrace \u2014 9.07 m\u00b2.",
+    advantages:"Дві спальні; окрема комора; компактне сімейне планування.",
+    advantagesEn:"Two bedrooms; a separate storage room; a compact family layout.",
+    insulation:"стіни 150 мм; дах і підлога 200 мм", insulationEn:"walls 150 mm; roof and floor 200 mm",
+    media:["img/models/cheremsha-cover.jpg"],
+    blueprint: "img/models/cheremsha-blueprint.jpg",
+    extraImg:"img/models/cheremsha-realized.jpg",
+    gallery: ["img/models/cheremsha-detail-1-top.jpg","img/models/cheremsha-detail-1-bottom.jpg","img/models/cheremsha-detail-2-top.jpg","img/models/cheremsha-detail-2-bottom.jpg"],
+    price:["1 151 897,00","1 716 151,00","1 877 855,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  obriy: {
+    title:"ОБРІЙ", subtitle:"70,17 метри квадратні", titleEn:"OBRIY", subtitleEn:"70.17 m\u00b2",
+    tagline:"Широкі проходи та простір для комфортного пересування",
+    taglineEn:"Wide passages and room for comfortable movement",
+    description:"Проєкт розроблений з урахуванням потреб маломобільних людей: простора кухня-вітальня, збільшений санвузол і можливість безпорогового виходу.",
+    descriptionEn:"Designed with the needs of people with limited mobility in mind: a spacious kitchen-living room, an enlarged bathroom, and a step-free exit.",
+    dims:"7,51 × 11,30 м", dimsEn:"7.51 \u00d7 11.30 m", terrace:"18,63 м²", terraceEn:"18.63 m\u00b2", bedrooms:"1", bedroomsEn:"1",
+    rooms:"Спальня - 16,04 м²; кухня-вітальня - 27,67 м²; санвузол - 11,26 м²; тераса - 18,63 м².",
+    roomsEn:"Bedroom \u2014 16.04 m\u00b2; kitchen-living room \u2014 27.67 m\u00b2; bathroom \u2014 11.26 m\u00b2; terrace \u2014 18.63 m\u00b2.",
+    advantages:"Збільшений санвузол; широкі проходи; можливість безпорогового виходу.",
+    advantagesEn:"An enlarged bathroom; wide passages; a step-free exit.",
+    insulation:"стіни 150 мм; дах і підлога 200 мм", insulationEn:"walls 150 mm; roof and floor 200 mm",
+    media:["img/models/obriy-cover.jpg"],
+    blueprint: "img/models/obriy-blueprint.jpg",
+    extraImg:"img/models/obriy-realized.jpg",
+    gallery: ["img/models/obriy-detail-1-tl.jpg","img/models/obriy-detail-1-tr.jpg","img/models/obriy-detail-1-bl.jpg","img/models/obriy-detail-1-br.jpg","img/models/obriy-detail-2-tl.jpg","img/models/obriy-detail-2-tr.jpg","img/models/obriy-detail-2-bl.jpg","img/models/obriy-detail-2-br.jpg"],
+    price:["1 567 270,00","2 315 591,00","2 782 317,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  rodyna: {
+    title:"РОДИНА", subtitle:"100,01 метри квадратні", titleEn:"RODYNA", subtitleEn:"100.01 m\u00b2",
+    tagline:"Дві спальні, гардероб і кухня-вітальня майже 29 м²",
+    taglineEn:"Two bedrooms, a walk-in closet and a nearly 29 m\u00b2 kitchen-living room",
+    description:"Сімейний будинок із двома рівноцінними спальнями, окремим гардеробом і великою кухнею-вітальнею. Тераса стає літньою їдальнею або зоною відпочинку.",
+    descriptionEn:"A family house with two equal bedrooms, a separate walk-in closet and a large kitchen-living room. The terrace becomes a summer dining area or a place to relax.",
+    dims:"9,00 × 13,00 м", dimsEn:"9.00 \u00d7 13.00 m", terrace:"26,10 м²", terraceEn:"26.10 m\u00b2", bedrooms:"2", bedroomsEn:"2",
+    rooms:"Спальні - по 11,44 м²; кухня-вітальня - 28,76 м²; гардероб - 5,05 м²; санвузол - 5,11 м²; тераса - 26,10 м²; ганок - 4,76 м².",
+    roomsEn:"Bedrooms \u2014 11.44 m\u00b2 each; kitchen-living room \u2014 28.76 m\u00b2; walk-in closet \u2014 5.05 m\u00b2; bathroom \u2014 5.11 m\u00b2; terrace \u2014 26.10 m\u00b2; porch \u2014 4.76 m\u00b2.",
+    advantages:"Дві рівноцінні спальні; гардероб; велика кухня-вітальня.",
+    advantagesEn:"Two equal bedrooms; a walk-in closet; a large kitchen-living room.",
+    insulation:"стіни 150 мм; дах і підлога 200 мм", insulationEn:"walls 150 mm; roof and floor 200 mm",
+    media:["img/models/rodyna-cover.jpg"],
+    blueprint: "img/models/rodyna-blueprint.jpg",
+    extraImg:"img/models/rodyna-realized.jpg",
+    gallery: ["img/models/rodyna-detail-1-tl.jpg","img/models/rodyna-detail-1-tr.jpg","img/models/rodyna-detail-1-bl.jpg","img/models/rodyna-detail-1-br.jpg","img/models/rodyna-detail-2-tl.jpg","img/models/rodyna-detail-2-tr.jpg","img/models/rodyna-detail-2-bl.jpg","img/models/rodyna-detail-2-br.jpg"],
+    price:["2 231 041,00","3 297 588,00","3 527 574,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
+  },
+  dibrova: {
+    title:"ДІБРОВА", subtitle:"192,00 метри квадратні", titleEn:"DIBROVA", subtitleEn:"192.00 m\u00b2",
+    tagline:"Три спальні, дві тераси та повний набір допоміжних приміщень",
+    taglineEn:"Three bedrooms, two terraces and a full set of utility rooms",
+    description:"Просторий будинок для великої родини: три спальні з гардеробами, два санвузли, пральня, котельня, комора та кухня-вітальня понад 54 м².",
+    descriptionEn:"A spacious house for a large family: three bedrooms with walk-in closets, two bathrooms, a laundry room, a boiler room, a storage room, and a kitchen-living room over 54 m\u00b2.",
+    dims:"15,88 × 21,78 м", dimsEn:"15.88 \u00d7 21.78 m", terrace:"133,34 м²", terraceEn:"133.34 m\u00b2", bedrooms:"3", bedroomsEn:"3",
+    rooms:"3 спальні; 3 гардероби; кухня-вітальня - 54,49 м²; 2 санвузли; пральня; котельня; комора; тераси - 109,44 і 23,90 м².",
+    roomsEn:"3 bedrooms; 3 walk-in closets; kitchen-living room \u2014 54.49 m\u00b2; 2 bathrooms; laundry room; boiler room; storage room; terraces \u2014 109.44 and 23.90 m\u00b2.",
+    advantages:"Три спальні; два санвузли; пральня, котельня та комора; дві тераси.",
+    advantagesEn:"Three bedrooms; two bathrooms; a laundry room, boiler room and storage room; two terraces.",
+    insulation:"200 мм", insulationEn:"200 mm",
+    media:["img/models/dibrova-cover.jpg"],
+    blueprint: "img/models/dibrova-blueprint.jpg",
+    extraImg:"img/models/dibrova-interior.jpg",
+    price:["4 782 569,00","6 830 135,00","7 233 480,00"],
+    notice: SHARED_NOTICE, noticeEn: SHARED_NOTICE_EN,
+    thanks: SHARED_THANKS, thanksEn: SHARED_THANKS_EN
   },
 };
 
 const project = new URLSearchParams(location.search).get('project') || 'house61';
 const d = DATA[project] || DATA.house61;
 
-document.title = 'pro DIM — ' + d.title;
+function formatPriceEn(uaPrice){
+  const clean = String(uaPrice).trim();
+  const parts = clean.split(',');
+  const intPart = parts[0].trim().replace(/\s+/g, ',');
+  const decPart = parts[1] || '00';
+  return `${intPart}.${decPart}`;
+}
 
-// TABLE (без змін)
-function buildTable(){
-  const wrap=document.createElement('div'); wrap.style.overflowX='auto'; wrap.style.marginBottom='32px';
+// TABLE — приймає одну з двох спільних таблиць, рендерить з заголовком-секцією
+function buildTable(table, lang){
+  const wrap=document.createElement('div'); wrap.className='table-block';
+  const h3=document.createElement('h3'); h3.className='table-title';
+  h3.textContent = lang==='en' ? table.titleEn : table.title;
+  wrap.appendChild(h3);
+
+  const scroll=document.createElement('div'); scroll.style.overflowX='auto';
   const t=document.createElement('table'); t.className='spec-table';
   const thead=document.createElement('thead');
   const hr=document.createElement('tr');
-  d.table.headers.forEach(h=>{ const th=document.createElement('th'); th.textContent=h; hr.appendChild(th); });
+  const headers = lang==='en' ? table.headersEn : table.headers;
+  headers.forEach(h=>{ const th=document.createElement('th'); th.textContent=h; hr.appendChild(th); });
   thead.appendChild(hr); t.appendChild(thead);
   const tbody=document.createElement('tbody');
-  d.table.rows.forEach(row=>{
+
+  table.rows.forEach(row=>{
     const tr=document.createElement('tr');
     const td0=document.createElement('td');
-    td0.innerHTML=`<strong>${row.name}</strong>${row.desc?'<br><span class="note">'+row.desc+'</span>':''}`;
+    const name = lang==='en' ? row.nameEn : row.name;
+    const desc = lang==='en' ? row.descEn : row.desc;
+    td0.innerHTML=`<strong>${name}</strong>${desc?'<br><span class="note">'+desc+'</span>':''}`;
     tr.appendChild(td0);
     row.vals.forEach(v=>{
       const td=document.createElement('td');
-      if(row.price){ td.textContent=v; }
-      else { td.innerHTML=v==='+'?'<span class="plus">+</span>':v==='−'?'<span class="minus">−</span>':v; }
+      td.innerHTML = v==='+' ? '<span class="plus">+</span>' : v==='−' ? '<span class="minus">−</span>' : v;
       tr.appendChild(td);
     });
     tbody.appendChild(tr);
   });
-  t.appendChild(tbody); wrap.appendChild(t); return wrap;
+
+  t.appendChild(tbody); scroll.appendChild(t); wrap.appendChild(scroll); return wrap;
 }
 
-// TEXT
-function buildExtra(){
+// ЦІНА — три картки, як в оригінальному каталозі (а не рядок таблиці)
+function buildPriceBoxes(lang){
+  const wrap=document.createElement('div'); wrap.className='price-boxes';
+  const labels = lang==='en'
+    ? ['Ready for finishing','Finished','Turnkey']
+    : ['Під оздоблення','З оздобленням','Під ключ'];
+  d.price.forEach((v,i)=>{
+    const box=document.createElement('div'); box.className='price-box'+(i===2?' price-box-main':'');
+    const lbl=document.createElement('span'); lbl.textContent=labels[i];
+    const val=document.createElement('strong'); val.textContent=(lang==='en'?formatPriceEn(v):v)+(lang==='en'?' UAH':' грн');
+    box.appendChild(lbl); box.appendChild(val);
+    wrap.appendChild(box);
+  });
+  return wrap;
+}
+
+// СТОРІНКА 32: додаткові опції / не входить / зверніть увагу — спільне для всіх моделей
+function buildChangeInfo(lang){
+  const wrap=document.createElement('div'); wrap.className='change-info';
+
+  const col1=document.createElement('div'); col1.className='change-col';
+  const h1_=document.createElement('h4'); h1_.textContent = lang==='en'?CHANGE_INFO.optionsTitleEn:CHANGE_INFO.optionsTitle;
+  const ul1=document.createElement('ul');
+  (lang==='en'?CHANGE_INFO.optionsEn:CHANGE_INFO.options).forEach(t=>{const li=document.createElement('li');li.textContent=t;ul1.appendChild(li);});
+  col1.appendChild(h1_); col1.appendChild(ul1);
+
+  const col2=document.createElement('div'); col2.className='change-col';
+  const h2_=document.createElement('h4'); h2_.textContent = lang==='en'?CHANGE_INFO.notIncludedTitleEn:CHANGE_INFO.notIncludedTitle;
+  const ul2=document.createElement('ul');
+  (lang==='en'?CHANGE_INFO.notIncludedEn:CHANGE_INFO.notIncluded).forEach(t=>{const li=document.createElement('li');li.textContent=t;ul2.appendChild(li);});
+  col2.appendChild(h2_); col2.appendChild(ul2);
+
+  const col3=document.createElement('div'); col3.className='change-col change-attention';
+  const h3_=document.createElement('h4'); h3_.textContent = lang==='en'?CHANGE_INFO.attentionTitleEn:CHANGE_INFO.attentionTitle;
+  const p3=document.createElement('p'); p3.textContent = lang==='en'?CHANGE_INFO.attentionTextEn:CHANGE_INFO.attentionText;
+  col3.appendChild(h3_); col3.appendChild(p3);
+
+  wrap.appendChild(col1); wrap.appendChild(col2); wrap.appendChild(col3);
+
+  const turnkey=document.createElement('div'); turnkey.className='change-turnkey';
+  turnkey.innerHTML = `<strong>${lang==='en'?CHANGE_INFO.turnkeyTitleEn:CHANGE_INFO.turnkeyTitle}</strong><span>${lang==='en'?CHANGE_INFO.turnkeyTextEn:CHANGE_INFO.turnkeyText}</span>`;
+
+  const outer=document.createElement('div');
+  outer.appendChild(wrap);
+  outer.appendChild(turnkey);
+  return outer;
+}
+
+// TEXT (додаткові опції / що не входить) — тільки якщо є в моделі
+function buildExtra(lang){
+  if(!d.extraText) return null;
   const div=document.createElement('div'); div.className='extra';
   d.extraText.forEach(item=>{
-    if(item.type==='h3'){const h=document.createElement('h3');h.textContent=item.text;div.appendChild(h);}
-    else if(item.type==='ul'){
+    if(item.type==='h3'){
+      const h=document.createElement('h3');
+      h.textContent = lang==='en' ? item.textEn : item.text;
+      div.appendChild(h);
+    } else if(item.type==='ul'){
       const ul=document.createElement('ul');
-      item.items.forEach(li=>{const l=document.createElement('li');l.textContent=li;ul.appendChild(l);});
+      const items = lang==='en' ? item.itemsEn : item.items;
+      items.forEach(li=>{
+        const l=document.createElement('li');
+        l.textContent = li;
+        ul.appendChild(l);
+      });
       div.appendChild(ul);
     }
   });
   return div;
 }
 
-// ASSEMBLE
+// ІНФО-БЛОК (площа/склад приміщень/переваги/утеплення) — для нових моделей з каталогу
+function buildInfo(lang){
+  if(!d.rooms) return null;
+  const div=document.createElement('div'); div.className='house-info';
+
+  if(d.tagline){
+    const p=document.createElement('p'); p.className='tagline';
+    p.textContent = lang==='en' ? d.taglineEn : d.tagline;
+    div.appendChild(p);
+  }
+  if(d.description){
+    const p=document.createElement('p'); p.className='description';
+    p.textContent = lang==='en' ? d.descriptionEn : d.description;
+    div.appendChild(p);
+  }
+
+  const specs=document.createElement('div'); specs.className='mini-specs';
+  const items = [
+    [lang==='en'?'Dimensions':'Габарит', lang==='en'?d.dimsEn:d.dims],
+    [lang==='en'?'Terrace':'Тераса', lang==='en'?d.terraceEn:d.terrace],
+    [lang==='en'?'Bedrooms':'Спальні', lang==='en'?d.bedroomsEn:d.bedrooms],
+  ];
+  items.forEach(([label,val])=>{
+    const box=document.createElement('div'); box.className='mini-spec';
+    box.innerHTML = `<span>${label}</span><strong>${val}</strong>`;
+    specs.appendChild(box);
+  });
+  div.appendChild(specs);
+
+  const roomsBlock=document.createElement('div'); roomsBlock.className='rooms-block';
+  const h4a=document.createElement('h4'); h4a.textContent = lang==='en'?'Room composition':'Склад приміщень';
+  const pa=document.createElement('p'); pa.textContent = lang==='en'?d.roomsEn:d.rooms;
+  roomsBlock.appendChild(h4a); roomsBlock.appendChild(pa);
+  div.appendChild(roomsBlock);
+
+  if(d.advantages){
+    const advBlock=document.createElement('div'); advBlock.className='rooms-block';
+    const h4b=document.createElement('h4'); h4b.textContent = lang==='en'?'Advantages':'Переваги';
+    const pb=document.createElement('p'); pb.textContent = lang==='en'?d.advantagesEn:d.advantages;
+    advBlock.appendChild(h4b); advBlock.appendChild(pb);
+    div.appendChild(advBlock);
+  }
+
+  if(d.insulation){
+    const insBox=document.createElement('div'); insBox.className='insulation-box';
+    insBox.innerHTML = `<span>${lang==='en'?'Insulation':'Утеплення'}</span><strong>${lang==='en'?d.insulationEn:d.insulation}</strong>`;
+    div.appendChild(insBox);
+  }
+
+  return div;
+}
+
+// HERO: головне фото + мініатюри інших фото праворуч (не додає висоти сторінці)
+function buildHero(lang, title){
+  const extras = [];
+  if(d.extraImg) extras.push(d.extraImg);
+  if(d.gallery) extras.push(...d.gallery);
+
+  if(!extras.length){
+    const img=document.createElement('img');
+    img.src=d.media[0]; img.alt=title; img.className='single-img';
+    return img;
+  }
+
+  const wrap=document.createElement('div'); wrap.className='hero-wrap';
+  const mainImg=document.createElement('img');
+  mainImg.src=d.media[0]; mainImg.alt=title; mainImg.className='hero-main';
+  wrap.appendChild(mainImg);
+
+  const thumbs=document.createElement('div'); thumbs.className='hero-thumbs';
+  thumbs.classList.add(extras.length>=5 ? 'many' : 'few');
+  const photoWord = lang==='en' ? 'photo' : 'фото';
+  extras.slice(0,5).forEach((src,i)=>{
+    const im=document.createElement('img');
+    im.src=src; im.alt=`${title} — ${photoWord} ${i+1}`; im.loading='lazy';
+    thumbs.appendChild(im);
+  });
+  wrap.appendChild(thumbs);
+  return wrap;
+}
+
+// ASSEMBLE (перебудовується при кожній зміні мови)
 const main=document.getElementById('main-content');
 
-// title
-const h1=document.createElement('h1');
-h1.innerHTML=`${d.title}<small>${d.subtitle}</small>`;
-main.appendChild(h1);
+function render(){
+  const lang = window.pdCurrentLang ? window.pdCurrentLang() : 'uk';
+  main.innerHTML = '';
 
-const img=document.createElement('img');
-img.src=d.media[0];
-img.alt=d.title;
-img.className='single-img';
+  const title = lang==='en' ? d.titleEn : d.title;
+  const subtitle = lang==='en' ? d.subtitleEn : d.subtitle;
+  document.title = 'pro DIM — ' + title;
 
-main.appendChild(img);
+  const h1=document.createElement('h1');
+  h1.innerHTML=`${title}<small>${subtitle}</small>`;
+  main.appendChild(h1);
 
-// table
-main.appendChild(buildTable());
-
-// text
-main.appendChild(buildExtra());
-
-// extra image (як було)
-if(d.extraImg){
-  const img=document.createElement('img');
-  img.src=d.extraImg;
-  img.className='extra-img';
+  const img=buildHero(lang, title);
   main.appendChild(img);
+
+  const info = buildInfo(lang);
+  if(info) main.appendChild(info);
+
+  main.appendChild(buildPriceBoxes(lang));
+
+  main.appendChild(buildTable(SHARED_TABLE_1, lang));
+  main.appendChild(buildTable(SHARED_TABLE_2, lang));
+
+  if(d.blueprint){
+    const bp=document.createElement('img');
+    bp.src=d.blueprint;
+    bp.alt = title + (lang==='en' ? ' — floor plan' : ' — креслення планування');
+    bp.className='blueprint-img';
+    bp.loading='lazy';
+    main.appendChild(bp);
+  }
+
+  main.appendChild(buildChangeInfo(lang));
+
+  const notice=document.createElement('div'); notice.className='notice';
+  const noticeArr = lang==='en' ? d.noticeEn : d.notice;
+  noticeArr.forEach(n=>{
+    const p=document.createElement('p');
+    p.innerHTML=n;
+    notice.appendChild(p);
+  });
+  main.appendChild(notice);
+
+  const thanksText = lang==='en' ? d.thanksEn : d.thanks;
+  if(thanksText){
+    const t=document.createElement('p');
+    t.className='thanks';
+    t.style.whiteSpace='pre-line';
+    t.textContent=thanksText;
+    main.appendChild(t);
+  }
 }
 
-// notice
-const notice=document.createElement('div'); notice.className='notice';
-d.notice.forEach(n=>{
-  const p=document.createElement('p');
-  p.innerHTML=n;
-  notice.appendChild(p);
-});
-main.appendChild(notice);
-
-// thanks
-if(d.thanks){
-  const t=document.createElement('p');
-  t.className='thanks';
-  t.style.whiteSpace='pre-line';
-  t.textContent=d.thanks;
-  main.appendChild(t);
-}
+render();
+window.pdOnLangChange = render;
 
 </script>
 </body>

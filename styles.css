@@ -5,7 +5,7 @@ padding:0;
 }
 
 body{
-background:#0F1115;
+background:var(--c-bg);
 font-family:'Manrope',sans-serif;
 display:flex;
 gap:24px;
@@ -17,13 +17,14 @@ align-items:stretch;
 .section{
 flex:1;
 position:relative;
-border:2px solid #D4A373;
+border:2px solid var(--c-accent);
 border-top:none;
 border-radius:0 0 8px 8px;
 background:var(--bg) center/cover no-repeat;
 overflow:visible;
 text-decoration:none;
 margin-bottom:calc(48px + 24px);
+transform-origin:top center;
 }
 
 .section::before{
@@ -37,43 +38,49 @@ z-index:1;
 
 .section p{
 position:absolute;
-bottom:calc(-48px - 24px);
+top:100%;
 left:50%;
-transform:translateX(-50%);
-color:#fff;
+transform:translate(-50%,24px);
+color:var(--c-text);
 font-size:48px;
 font-weight:700;
 letter-spacing:.04em;
 white-space:nowrap;
-transition:.3s;
+transition:transform .3s, color .3s;
 z-index:3;
+will-change:transform;
+pointer-events:none;
 }
 
 .section small{
 position:absolute;
-bottom:48px;
+top:100%;
 left:50%;
-transform:translateX(-50%);
-color:#A0A6AD;
+transform:translate(-50%,96px);
+color:var(--c-muted);
 font-size:24px;
 font-weight:500;
 text-align:center;
 opacity:0;
-transition:.3s;
+transition:transform .3s, opacity .3s, color .3s;
 z-index:3;
-}
-
-.section:hover::before{
+will-change:transform;
+pointer-events:none;
+}@media (hover:hover) and (pointer:fine){
+  .section:hover::before {
 background:rgba(0,0,0,.8);
 }
-
-.section:hover p{
-bottom:50%;
-transform:translate(-50%,50%);
+}@media (hover:hover) and (pointer:fine){
+  .section:hover p {
+transform:translate(-50%,-140px);
+color:#fff;
 }
-
-.section:hover small{
+}@media (hover:hover) and (pointer:fine){
+  .section:hover small {
 opacity:1;
+transform:translate(-50%,-96px);
+color:#D8DADD;
+}
 }
 
 .mid::after{
@@ -83,10 +90,12 @@ top:0;
 left:0;
 right:0;
 height:55%;
-background:linear-gradient(to bottom,#0F1115 0%,transparent 100%);
+background:linear-gradient(to bottom,var(--c-bg) 0%,transparent 100%);
 z-index:2;
 pointer-events:none;
 }
+
+:root[data-theme="light"] .logo{filter:invert(1)}
 
 .logo{
 position:absolute;
@@ -123,8 +132,8 @@ height:100vh;
 .section{
 flex:1;
 margin:0;
-border-radius:8px;
-border-top:4px solid #D4A373;
+border-radius:9px;
+border-top:4px solid var(--c-accent);
 }
 
 /* прибираємо затемнення */
@@ -147,6 +156,7 @@ left:50%;
 transform:translate(-50%,-50%);
 bottom:auto;
 font-size:32px;
+color:#fff;
 }
 
 /* логотип */
@@ -161,4 +171,19 @@ margin:0 auto 24px;
 height:64px;
 }
 
+}
+
+
+/* тап-фідбек для сенсорних екранів (дзеркалить :hover, але не залипає) */
+.section:active::before {
+background:rgba(0,0,0,.8);
+}
+.section:active p {
+transform:translate(-50%,-140px);
+color:#fff;
+}
+.section:active small {
+opacity:1;
+transform:translate(-50%,-96px);
+color:#D8DADD;
 }

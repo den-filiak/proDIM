@@ -1,68 +1,92 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+<script>(function(){var t=localStorage.getItem("pd-theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pro DIM — Проект</title>
+  <meta name="description" content="Фото та деталі реалізованого проєкту proDIM — модульний будинок, альтанка чи дитячий майданчик для наших клієнтів.">
+  <link rel="canonical" href="https://prodim.chernihiv.ua/project.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="pro DIM — Проєкт">
+  <meta property="og:description" content="Фото та деталі реалізованого проєкту proDIM — модульний будинок, альтанка чи дитячий майданчик для наших клієнтів.">
+  <meta property="og:image" content="https://prodim.chernihiv.ua/logo.png">
+  <meta property="og:url" content="https://prodim.chernihiv.ua/project.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="icon" href="logo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="project.css">
+<script src="i18n.js" defer></script>
+<script src="theme.js" defer></script>
 </head>
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    
-    <button class="arrow prev" id="lb-prev">
-      <svg viewBox="0 0 24 24">
-        <path d="M15 6l-6 6 6 6"/>
-      </svg>
-    </button>
-
-    <div id="lightbox-media"></div>
-
-    <button class="arrow next" id="lb-next">
-      <svg viewBox="0 0 24 24">
-        <path d="M9 6l6 6-6 6"/>
-      </svg>
-    </button>
-
-    <button class="lightbox-close" id="lb-close">✕</button>
-
-  </div>
-</div>
-
 <body>
 
-  <input type="checkbox" id="nav-open" hidden>
+  <input type="checkbox" id="pd-nav-toggle" hidden>
 
-  <header>
-    <a href="index.html"><img src="logo.png" alt="pro DIM" class="logo"></a>
-    <label for="nav-open" class="burger" aria-label="Меню">
+  <header class="pd-header">
+    <div class="pd-header-left">
+    <a href="index.html" class="pd-logo"><img src="logo.png" alt="pro DIM"></a>
+    <button class="pd-back" onclick="history.back()" aria-label="Назад" type="button">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      <span data-en="Back">Назад</span>
+    </button>
+    </div>
+    <div class="pd-header-right">
+    <div class="pd-theme-toggle">
+      <span class="pd-theme-btn active" data-theme="dark" aria-label="Темна тема"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span>
+      <span class="pd-theme-btn" data-theme="light" aria-label="Світла тема"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+    </div>
+    <div class="pd-lang-toggle">
+      <span class="pd-lang-btn" data-lang="uk">UA</span>
+      <span class="pd-lang-btn" data-lang="en">EN</span>
+    </div>
+    <label for="pd-nav-toggle" class="pd-burger" aria-label="Відкрити меню">
       <span></span><span></span><span></span>
     </label>
+  </div>
   </header>
 
-  <div class="overlay">
-    <label for="nav-open" class="overlay-bg"></label>
-    <nav>
-      <label for="nav-open" class="menu-back">
-        Назад
-      </label>
-      <a href="contact.html" class="nc" style="--bg:url('img/contact.png')">
-        <span>КОНТАКТИ</span>
-        <small>∧<br>Дізнатись більше</small>
-      </a>
-      <a href="about.html" class="nc" style="--bg:url('img/about.png')">
-        <span>ПРО НАС</span>
-        <small>∧<br>Дізнатись більше</small>
-      </a>
-      <a href="projects.html" class="nc" style="--bg:url('img/projects.png')">
-        <span>РЕАЛІЗОВАНІ<br>ПРОЕКТИ</span>
-        <small>∧<br>Дізнатись більше</small>
-      </a>
+  <div class="pd-nav-overlay">
+    <label for="pd-nav-toggle" class="pd-nav-bg" aria-label="Закрити меню"></label>
+    <label for="pd-nav-toggle" class="pd-nav-close" aria-label="Закрити меню">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </label>
+    <nav class="pd-nav">
+        <a href="index.html" data-en="Home">Головна</a>
+        <a href="catalog.html" data-en="Catalog">Каталог</a>
+        <a href="about.html" data-en="About us">Про нас</a>
+        <a href="projects.html" data-en="Our Projects">Реалізовані проєкти</a>
+        <a href="offer.html" data-en="Commercial Offer">Комерційна пропозиція</a>
+        <a href="contact.html" data-en="Contact">Контакти</a>
     </nav>
   </div>
 
-  <main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+
+      <button class="arrow prev" id="lb-prev">
+        <svg viewBox="0 0 24 24">
+          <path d="M15 6l-6 6 6 6"/>
+        </svg>
+      </button>
+
+      <div id="lightbox-media"></div>
+
+      <button class="arrow next" id="lb-next">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 6l6 6-6 6"/>
+        </svg>
+      </button>
+
+      <button class="lightbox-close" id="lb-close">✕</button>
+
+    </div>
+  </div>
+
+  <main class="pd-page">
     <div class="content">
       <div class="text-col">
         <h1 id="proj-title"></h1>
@@ -88,23 +112,23 @@
     </div>
   </main>
 
-  <footer>
+  <footer class="pd-footer">
     <hr>
-    <div class="foot">
+    <div class="pd-foot">
       <img src="logo.png" alt="pro DIM">
-      <div class="socials">
-        <strong>БУДЬ З НАМИ НА ЗВ'ЯЗКУ!</strong>
-        <div class="icons">
-          <a href="https://www.tiktok.com/@prodim_?_r=1&_t=ZS-94xQqrTevDO" aria-label="TikTok"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
-          <a href="https://www.facebook.com/share/18eHg71dXW/" aria-label="Facebook"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="viber://chat?number=%2B380684421138" aria-label="Viber"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M11.4 2C6.27 2 2.5 5.28 2.5 9.64c0 2.44 1.15 4.64 3.04 6.09v3.27l2.97-1.63c.58.16 1.2.24 1.84.24h.05c5.13 0 8.9-3.28 8.9-7.64S16.53 2 11.4 2zm1 10.48l-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.91-2.72-5.47 5.82z"/></svg></a>
-          <a href="https://t.me/makarenko93yuliia" aria-label="Telegram"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
-          <a href="https://www.instagram.com/_prodim_?igsh=MWplN2h5b3N5bXp5aQ==" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg></a>
+      <div class="pd-socials">
+        <strong data-en="STAY IN TOUCH WITH US!">БУДЬ З НАМИ НА ЗВ'ЯЗКУ!</strong>
+        <div class="pd-icons">
+          <a href="https://www.tiktok.com/@prodim_?_r=1&_t=ZS-94xQqrTevDO" aria-label="TikTok"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
+          <a href="https://www.facebook.com/share/18eHg71dXW/" aria-label="Facebook"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="viber://chat?number=%2B380684421138" aria-label="Viber"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 2C6.27 2 2.5 5.28 2.5 9.64c0 2.44 1.15 4.64 3.04 6.09v3.27l2.97-1.63c.58.16 1.2.24 1.84.24h.05c5.13 0 8.9-3.28 8.9-7.64S16.53 2 11.4 2zm1 10.48l-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.91-2.72-5.47 5.82z"/></svg></a>
+          <a href="https://t.me/makarenko93yuliia" aria-label="Telegram"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+          <a href="https://www.instagram.com/_prodim_?igsh=MWplN2h5b3N5bXp5aQ==" aria-label="Instagram"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         </div>
       </div>
-      <div class="phone">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.5 19.79 19.79 0 01.34 2.84 2 2 0 012.33 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-.77a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <strong><a href="tel:+380684421137" class="phone-n">+380684421137</a></strong>
+      <div class="pd-phone">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.5 19.79 19.79 0 01.34 2.84 2 2 0 012.33 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.9a16 16 0 006.29 6.29l1.27-.77a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <strong><a href="tel:+380684421137" class="pd-phone-n">+380684421137</a></strong>
       </div>
     </div>
   </footer>
@@ -263,17 +287,74 @@
     const city = new URLSearchParams(location.search).get('city') || 'nizhyn';
 const d = DATA[city];
 
-document.getElementById('proj-title').textContent = d.title;
-document.getElementById('proj-subtitle').textContent = d.subtitle;
+const GENERIC_TEXT_EN = [
+  "The proDIM team doesn't just build houses — we help fully furnish the space around them.",
+  "If you want your yard to be comfortable, functional and cozy, we can build gazebos, garden swings, playgrounds, fences and other landscaping elements for you.",
+  "We handle every stage — from the initial idea and design to manufacturing and installation. Our goal is to take the hassle of space planning off your hands and create a place that's a pleasure to relax in with family and friends.",
+  "We listen closely to your wishes and help turn ideas into a real space, thought through down to the smallest detail.",
+  "proDIM — we create not just houses, but the atmosphere of life around them."
+];
 
-const textEl = document.getElementById('proj-text');
-textEl.innerHTML = "";
+const TRANSLATIONS = {
+  nizhyn:      { title: "GAZEBO \u2212 NIZHYN",       subtitle: "Yard and small architectural forms", text: GENERIC_TEXT_EN },
+  kyiv:        { title: "GAZEBO \u2212 KYIV",         subtitle: "Yard and small architectural forms", text: GENERIC_TEXT_EN },
+  chernihiv:   { title: "GAZEBO \u2212 CHERNIHIV",     subtitle: "Yard and small architectural forms", text: GENERIC_TEXT_EN },
+  khotynivka:  { title: "HOUSE \u2212 KHOTYNIVKA",     subtitle: "Yard and small architectural forms", text: GENERIC_TEXT_EN },
+  playground:  { title: "PLAYGROUNDS",                subtitle: "Yard and small architectural forms", text: GENERIC_TEXT_EN },
+  garden:      { title: "GARDEN STRUCTURES",           subtitle: "Yard and small architectural forms", text: GENERIC_TEXT_EN },
+  banket: {
+    title: "BANQUET HALL \u2212 NIZHYN",
+    subtitle: "Banquet hall \u2014 123 m\u00b2",
+    text: [
+      "We completed this project in just 2 months \u2014 from concept to a finished space.",
+      "The total area is 123 m\u00b2, and it's designed for celebrations, ceremonies and moments that matter to you.",
+      "It's a spacious, bright and functional banquet hall where modern design meets comfort. Thanks to the modular approach, the space was assembled quickly, without construction mess on site.",
+      "This project shows our approach: fast, high-quality, and detail-focused \u2014 so every event feels special."
+    ]
+  },
+  mykulychyn: {
+    title: "HOUSE \u2212 MYKULYCHYN",
+    subtitle: "A house in the Carpathians \u2014 62 m\u00b2",
+    text: [
+      "We built this project high up in the Carpathian mountains. The house was manufactured in the Chernihiv region and delivered to the mountains \u2014 a logistics challenge in its own right.",
+      "Total area \u2014 62 m\u00b2. Built turnkey, from module production to full installation and move-in readiness.",
+      "The project shows the key advantages of modular technology: transport over long distances, fast assembly, and reliability even in difficult natural conditions.",
+      "proDIM \u2014 we build where others only plan."
+    ]
+  },
+  nosivka: {
+    title: "HOUSE \u2212 NOSIVKA",
+    subtitle: "Family home \u2014 120 m\u00b2 with a terrace and shelter",
+    text: [
+      "A spacious 120 m\u00b2 home built for a family's comfortable, safe living. In this project we paid special attention not only to a convenient layout but also to safety.",
+      "The house includes a full shelter sized for two rooms, giving the family extra protection and peace of mind. This was a key part of the concept \u2014 a modern home should be both comfortable and reliable.",
+      "The project also includes a large terrace for relaxing and a separate walk-in closet, adding everyday functionality.",
+      "This project shows our approach: comfort, thoughtful design and safety in one space.",
+      "proDIM \u2014 we build a home you can live in peacefully."
+    ]
+  }
+};
 
-d.text.forEach(t => {
-  const p = document.createElement('p');
-  p.textContent = t;
-  textEl.appendChild(p);
-});
+function renderProjectText(){
+  const lang = window.pdCurrentLang ? window.pdCurrentLang() : 'uk';
+  const tr = TRANSLATIONS[city];
+  const title = (lang === 'en' && tr) ? tr.title : d.title;
+  const subtitle = (lang === 'en' && tr) ? tr.subtitle : d.subtitle;
+  const textArr = (lang === 'en' && tr) ? tr.text : d.text;
+
+  document.getElementById('proj-title').textContent = title;
+  document.getElementById('proj-subtitle').textContent = subtitle;
+
+  const textEl = document.getElementById('proj-text');
+  textEl.innerHTML = "";
+  textArr.forEach(t => {
+    const p = document.createElement('p');
+    p.textContent = t;
+    textEl.appendChild(p);
+  });
+}
+renderProjectText();
+window.pdOnLangChange = renderProjectText;
 
 const MEDIA_PER_PAGE = 4;
 let cur = 0;
